@@ -1,0 +1,6 @@
+max_length_name_user: 50
+max_length_title_book: 50
+max_length_name_author: 30
+max_length_name_category: 30
+maximum_name: 50
+maximum_email: 50
