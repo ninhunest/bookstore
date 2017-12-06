@@ -1,24 +1,32 @@
-# README
+Welcome to Book Store.
+===================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Book store is a website which stores and presents a lot of interesting book for people. From this, we can figure out some favorite books and order easily.
 
-Things you may want to cover:
+----------
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Features.
+-------------
+ - Visitors.
+	- Can view books, share books.
+	- Can not comment, vote.
+	- Can order books.
+	- Can search books by category, author, publishing company, price.
+ - Users.
+	- Can signup/login/logout.
+	- Can remember password.
+	- Can login via facebook, google.
+	- Can manage personal information.
+	- Can comment, vote.
+	- Can search books by category, author, publishing company, price.
+	- Can share book.
+	- Can buy book.
+ - Admins.
+	- Can manage books.
+	- Can manage categories.
+	- Can active, inactive users.
+	- Can view bills.
+ - System
+	- Send mail or notice to admin when user checkout cart successfully.
+	- Send mail when user signup successfully.
+	- Statistic bills.
