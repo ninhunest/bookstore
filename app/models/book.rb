@@ -7,11 +7,8 @@ class Book < ApplicationRecord
   has_many :rates, dependent: :destroy
 
   scope :select_fields, (lambda do
-    select :id, :title, :image_url, :price,
-     :discount, :created_at
+    select :id, :title, :image_url, :price, :discount, :created_at, :updated_at, :category_id
   end)
-  scope :attributes_select, (lambda do
-    select :id, :title,
-      :price, :created_at, :updated_at, :category_id
-  end)
+
+  scope :except_current_book, ->book {where("id != ?", book.id)}
 end

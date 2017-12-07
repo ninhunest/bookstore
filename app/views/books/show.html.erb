@@ -1,1 +1,89 @@
-<p><%= t "books" %></p>
+<div class="row" id="productMain">
+  <div class="col-sm-3">
+    <div id="mainImage">
+      <%= image_tag @book.image_url, class: "img-responsive image_medium" %>
+    </div>
+    <% if @book.discount.present? %>
+    <div class="ribbon sale">
+      <div class="theribbon">-<%= @book.discount %>%</div>
+      <div class="ribbon-background"></div>
+    </div>
+    <% end %>
+    <% if is_new_book? @book.created_at %>
+    <div class="ribbon new">
+      <div class="theribbon"><%= t "new" %></div>
+      <div class="ribbon-background"></div>
+    </div>
+    <% end %>
+  </div>
+  <div class="col-sm-6">
+    <div class="box">
+      <div class="sizes">
+        <h3><%= @book.title %></h3>
+      </div>
+      <p class="price">
+        <% if @book.discount.present? %>
+          <del class="small_price"><%= format_price @book.price %></del>
+        <% end %>
+        <%= get_promotion_price @book.price, @book.discount %>
+      </p>
+      <p class="text-center">
+        <button type="submit" class="btn btn-template-main">
+          <i class="fa fa-shopping-cart"></i>
+          <%= t "add_to_cart" %>
+        </button>
+        <button class="btn btn-default" data-toggle="tooltip"
+          data-placement="top" title="Add to wishlist">
+          <i class="fa fa-heart-o"></i>
+        </button>
+      </p>
+    </div>
+  </div>
+  <div class="project-more col-sm-3">
+    <h4><%= t "category" %></h4>
+    <%= link_to @book.category.name, "#" %>
+    <h4><%= t "author" %></h4>
+      <%= render partial: "author", collection: @authors %>
+    <h4><%= t "publishing_date" %></h4>
+    <p><%= @book.created_at.strftime Settings.format_time %></p>
+    <%= social_share_button_tag @book.title %>
+  </div>
+</div>
+<div class="box" id="details">
+  <%= @book.description %>
+</div>
+<div id="comment-form">
+  <h4 class="text-uppercase"><%= t "leave_comments" %></h4>
+  <form>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label for="comment">
+            <%= t "comment" %> <span class="required">*</span>
+          </label>
+          <textarea class="form-control" id="comment"
+            rows="<%= Settings.textarea.number_rows %>">
+          </textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 text-right">
+        <button class="btn btn-template-main">
+          <i class="fa fa-comment-o"></i> <%= t "post_comment" %>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<br>
+<% if @related_books.present? %>
+  <div class="row">
+    <div class="col-md-3 col-sm-6">
+      <div class="text-uppercase">
+        <h3><%= t ".related_books" %></h3>
+      </div>
+    </div>
+    <%= render partial: "related_books", collection: @related_books, as: :item %>
+  </div>
+<% end %>

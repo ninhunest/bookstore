@@ -7,4 +7,8 @@ hot_items:
   limit: 10
 percentage: 100
 book_title: 70
-time_model: "%d-%m-%Y"
+related_book:
+  limit: 3
+format_time: "%d-%m-%Y"
+textarea:
+  number_rows: 7

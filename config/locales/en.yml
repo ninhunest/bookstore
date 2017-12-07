@@ -25,6 +25,12 @@ en:
   categories: "Categories"
   new: "New"
   view_all: "View all"
+  book_not_found: "Book not found"
+  close: "Close"
+  sharing_social: "Show it to your friends"
+  leave_comments: "Leave comments"
+  comment: "Comment"
+  post_comment: "Post comment"
 
   layouts:
     login:
@@ -37,3 +43,5 @@ en:
       hot_categories: "Hot categories"
       hot_publishers: "Hot publishers"
       books: "books"
+    show:
+      related_books: "You may also like these books"

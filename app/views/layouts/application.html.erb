@@ -9,9 +9,9 @@
     <title><%= t "book_store" %></title>
     <%= csrf_meta_tags %>
     <meta name="keywords" content="">
-    <%= stylesheet_link_tag "application", media: "all",
+    <%= stylesheet_link_tag "front_end", media: "all",
       "data-turbolinks-track": "reload" %>
-    <%= javascript_include_tag "application",
+    <%= javascript_include_tag "front_end",
       "data-turbolinks-track": "reload" %>
   </head>
 
@@ -21,6 +21,15 @@
     <div id="content">
       <div class="container">
         <div class="row">
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>">
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only"><%= t "close" %></span>
+              </button>
+              <%= value %>
+            </div>
+          <% end %>
           <%= yield %>
         </div>
       </div>

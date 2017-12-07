@@ -1,0 +1,16 @@
+//= require jquery
+//= require jquery_ujs
+//= require rails-ujs
+//= require turbolinks
+//= require bootstrap
+//= require bootstrap-hover-dropdown
+//= require jquery.min
+//= require bootstrap.min
+//= require universal/jquery.cookie
+//= require universal/waypoints.min
+//= require universal/jquery.counterup.min
+//= require universal/jquery.parallax-1.1.3
+//= require universal/front
+//= require social-share-button
+//= require bootstrap-fileinput/bootstrap-fileinput
+//= require cable

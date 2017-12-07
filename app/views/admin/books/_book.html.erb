@@ -3,7 +3,7 @@
   <td> <%= truncate book.title, length: Settings.book_title %> </td>
   <td> <%= link_to book.category.name, "#" %> </td>
   <td> <%= book.price %> </td>
-  <td> <%= book.created_at.strftime Settings.time_model %> </td>
+  <td> <%= book.created_at.strftime Settings.format_time %> </td>
   <td>
     <%= link_to t("view"), book_path(book),
       class: "btn btn-sm grey-salsa btn-outline" %>
