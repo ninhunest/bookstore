@@ -52,6 +52,16 @@ en:
   create_book: "create book"
   failed_create: "failed_create"
   create: "create"
+  delete_comment: "Delete comment"
+  comment_not_found: "Comment not found"
+  hi: "Hi"
+  delete_comment: "Delete comment"
+  book_title: "Book title: "
+  from: "From:"
+  to: "To:"
+  select_all: "Select all"
+  updating: "Updating"
+  filter_book: "Filter books"
 
   layouts:
     login:
@@ -114,4 +124,10 @@ en:
       new:
         resend_unlock_instructions: "Resend unlock instructions"
 
-
+  shared:
+    filter_form:
+      enter_book_title: "Enter book title to search"
+      select_category: "Select category:"
+      select_author: "Select author:"
+      select_publisher: "Select publisher:"
+      select_price: "Select price:"

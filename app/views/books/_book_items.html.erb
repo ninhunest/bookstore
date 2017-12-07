@@ -11,9 +11,9 @@
       </h3>
       <p class="price">
         <% if item.discount.present? %>
-          <del><%= get_promotion_price item.price, item.discount %></del>
+          <del class="small_price"><%= format_price item.price %></del>
         <% end %>
-        <%= format_price item.price %>
+        <%= get_promotion_price item.price, item.discount %>
       </p>
       <%= link_to "#" do %>
         <i class="fa fa-shopping-cart"></i>
