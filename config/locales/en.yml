@@ -1,3 +1,29 @@
 en:
   hello: "Hello world"
   book_store: "Book store"
+  contact_info: "Contact us on +420 777 555 333 or bookstore@gmail.com."
+  sign_in: "Sign in"
+  sign_up: "Sign up"
+  back_to_home_page: "BookStore - Go to home page"
+  toggle_navigation: "Toggle navigation"
+  hot_books: "Hot books"
+  contact: "Contact"
+  web_desciption: "Book store is a website which stores and presents a lot of
+    interesting book for people. From this, we can figure out some favorite
+    books and order easily."
+  about_us: "About us"
+  framgia_inc: "Framgia inc."
+  company_address: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road, Nam Tu Liem District., Ha Noi"
+  options: "Options"
+  admin: "Admin"
+  links: "Links"
+  home: "Home"
+  share: "Share"
+  user_login: "User login"
+  not_registered_yet?: "Not registered yet?"
+  admin_panel: "Admin panel"
+
+  layouts:
+    login:
+      register_presentation: "It is easy and done in 1&nbsp;minute and gives you
+        access to order special books and much more!"

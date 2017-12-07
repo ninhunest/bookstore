@@ -10,15 +10,19 @@ gem "config"
 gem "devise"
 gem "faker", "1.7.3"
 gem "fog", "1.40.0"
+gem "font-awesome-rails"
 gem "jbuilder", "2.7.0"
 gem "jquery-rails", "4.3.1"
 gem "mini_magick", "4.7.0"
 gem "puma", "3.9.1"
 gem "rails", "5.1.2"
+gem "rails-i18n"
 gem "sass-rails", "5.0.6"
 gem "turbolinks", "5.0.1"
 gem "uglifier", "3.2.0"
+gem "waypoints-rails"
 gem "will_paginate", "3.1.5"
+
 group :development, :test do
   gem "autoprefixer-rails"
   gem "better_errors"
@@ -39,12 +43,14 @@ group :development, :test do
   gem "rubocop-checkstyle_formatter", require: false
   gem "scss_lint_reporter_checkstyle", require: false
 end
+
 group :test do
   gem "shoulda-matchers"
   gem "simplecov", require: false
   gem "simplecov-json"
   gem "simplecov-rcov", require: false
 end
+
 group :development do
   gem "listen", "3.0.8"
   gem "spring", "2.0.2"
@@ -52,4 +58,5 @@ group :development do
   gem "sqlite3"
   gem "web-console", "3.5.1"
 end
+
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
