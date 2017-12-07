@@ -1,4 +1,9 @@
 en:
+  copy: "2014 &copy; Metronic by keenthemes."
+  not_found: "not found"
+  delete_successfully: "delete successfully"
+  delete_failed: "delete_failed"
+  updated_successfully: "updated_successfully"
   hello: "Hello world"
   book_store: "Book store"
   contact_info: "Contact us on +420 777 555 333 or bookstore@gmail.com."
@@ -22,7 +27,7 @@ en:
   user_login: "User login"
   not_registered_yet?: "Not registered yet?"
   admin_panel: "Admin panel"
-
+  sure: "Are you sure?"
   layouts:
     login:
       register_presentation: "It is easy and done in 1&nbsp;minute and gives you
