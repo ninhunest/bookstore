@@ -26,7 +26,7 @@ group :development, :test do
   gem "bundler-audit"
   gem "database_cleaner"
   gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails", require: false
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "guard-rspec", require: false
   gem "jshint"
   gem "railroady"
