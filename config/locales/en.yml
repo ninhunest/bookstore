@@ -31,6 +31,18 @@ en:
   leave_comments: "Leave comments"
   comment: "Comment"
   post_comment: "Post comment"
+  hi: "Hi"
+  sign_out: "Sign out"
+  replies: "replies"
+  reply: "Reply"
+  sign_in_to_comment: "Sign in to leave your comment"
+  delete_comment: "Delete comment"
+  book_title: "Book title: "
+  from: "From:"
+  to: "To:"
+  select_all: "Select all"
+  updating: "Updating"
+  filter_book: "Filter books"
 
   layouts:
     login:
@@ -45,3 +57,11 @@ en:
       books: "books"
     show:
       related_books: "You may also like these books"
+
+  shared:
+    filter_form:
+      enter_book_title: "Enter book title to search"
+      select_category: "Select category:"
+      select_author: "Select author:"
+      select_publisher: "Select publisher:"
+      select_price: "Select price:"

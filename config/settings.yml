@@ -10,5 +10,14 @@ book_title: 70
 related_book:
   limit: 3
 format_time: "%d-%m-%Y"
+day_only: "%d"
+month_only: "%m"
+year_only: "%Y"
+user_avatar:
+  medium: "300x300>"
+  thumb: "100x100#"
+  missing_url: "/images/:style/missing.png"
 textarea:
   number_rows: 7
+comments:
+  limit: 3
