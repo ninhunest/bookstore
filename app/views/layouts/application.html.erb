@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title><%= t "book_store" %></title>
     <%= csrf_meta_tags %>
-
+    <meta name="keywords" content="">
     <%= stylesheet_link_tag "application", media: "all",
       "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application",
@@ -11,6 +16,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/header" %>
+    <%= render "layouts/login" %>
+    <div id="content">
+      <div class="container">
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
+      <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>
