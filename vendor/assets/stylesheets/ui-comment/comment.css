@@ -19,8 +19,8 @@
   color: #999;
   font-size: 12px;
 }
-.media .media-object{app/assets/stylesheets/comment.css
-  max-width: 120px;
+.media .media-object{
+  max-width: 130px;
 }
 .media-body{
   position: relative;

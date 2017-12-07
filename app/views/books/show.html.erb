@@ -52,31 +52,42 @@
 <div class="box" id="details">
   <%= @book.description %>
 </div>
-<div id="comment-form">
-  <h4 class="text-uppercase"><%= t "leave_comments" %></h4>
-  <form>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="form-group">
-          <label for="comment">
-            <%= t "comment" %> <span class="required">*</span>
-          </label>
-          <textarea class="form-control" id="comment"
-            rows="<%= Settings.textarea.number_rows %>">
-          </textarea>
+<div id="comments">
+  <div class="comment-tabs">
+    <ul class="media-list">
+      <%= render partial: "comments", collection: @comments, as: :comment %>
+    </ul>
+  </div>
+</div>
+<% if user_signed_in? %>
+  <div id="comment-form">
+    <h4 class="text-uppercase"><%= t "leave_comments" %></h4>
+    <form>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="form-group">
+            <label for="comment">
+              <%= t "comment" %> <span class="required">*</span>
+            </label>
+            <textarea class="form-control" id="comment"
+              rows="<%= Settings.textarea.number_rows %>">
+            </textarea>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 text-right">
-        <button class="btn btn-template-main">
-          <i class="fa fa-comment-o"></i> <%= t "post_comment" %>
-        </button>
+      <div class="row">
+        <div class="col-sm-12 text-right">
+          <button class="btn btn-template-main">
+            <i class="fa fa-comment-o"></i> <%= t "post_comment" %>
+          </button>
+        </div>
       </div>
-    </div>
-  </form>
-</div>
-<br>
+    </form>
+  </div>
+<% else %>
+  <%= link_to t("sign_in_to_comment"), new_user_session_path %>
+<% end %>
+<br><br>
 <% if @related_books.present? %>
   <div class="row">
     <div class="col-md-3 col-sm-6">

@@ -9,14 +9,26 @@
         </div>
         <div class="col-xs-7">
           <div class="login">
-            <%= link_to "#", data:{toggle: "modal", target: "#login-modal"} do %>
-              <i class="fa fa-sign-in"></i>
-              <span class="hidden-xs text-uppercase"><%= t "sign_in" %></span>
-            <% end %>
-            <%= link_to new_user_registration_path do %>
-              <i class="fa fa-user"></i>
-              <span class="hidden-xs text-uppercase">
-                <%= t "sign_up" %></span>
+            <% if user_signed_in? %>
+              <%= link_to edit_user_registration_path do %>
+                <i class="fa fa-user"></i>
+                <span class="hidden-xs text-uppercase">
+                  <%= t "hi" %> <%= current_user.name %>
+                </span>
+              <% end %>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <%= t "sign_out" %>
+              <% end %>
+            <% else %>
+              <%= link_to new_user_session_path do %>
+                <i class="fa fa-sign-in"></i>
+                <span class="hidden-xs text-uppercase"><%= t "sign_in" %></span>
+              <% end %>
+              <%= link_to new_user_registration_path do %>
+                <i class="fa fa-user"></i>
+                <span class="hidden-xs text-uppercase">
+                  <%= t "sign_up" %></span>
+              <% end %>
             <% end %>
           </div>
         </div>
