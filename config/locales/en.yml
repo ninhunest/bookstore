@@ -22,8 +22,17 @@ en:
   user_login: "User login"
   not_registered_yet?: "Not registered yet?"
   admin_panel: "Admin panel"
+  categories: "Categories"
+  new: "New"
+  view_all: "View all"
 
   layouts:
     login:
       register_presentation: "It is easy and done in 1&nbsp;minute and gives you
         access to order special books and much more!"
+
+  books:
+    index:
+      hot_authors: "Hot Authors"
+      hot_categories: "Hot categories"
+      hot_publishers: "Hot publishers"

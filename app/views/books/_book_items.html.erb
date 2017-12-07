@@ -1,0 +1,42 @@
+<div class="col-md-4 col-sm-6">
+  <div class="product">
+    <div class="image">
+      <%= link_to book_path item do %>
+        <%= image_tag item.image_url, class: "img-responsive image1" %>
+      <% end %>
+    </div>
+    <div class="text">
+      <h3>
+        <%= link_to item.title, book_path(item) %>
+      </h3>
+      <p class="price">
+        <% if item.discount.present? %>
+          <del><%= get_promotion_price item.price, item.discount %></del>
+        <% end %>
+        <%= format_price item.price %>
+      </p>
+      <%= link_to "#" do %>
+        <i class="fa fa-shopping-cart"></i>
+        <%= t "add_to_cart" %>
+      <% end %>
+      <p class="buttons">
+        <%= link_to "#", clas: "btn btn-template-main" do %>
+          <i class="fa fa-shopping-cart"></i>
+          <%= t "add_to_cart" %>
+        <% end %>
+      </p>
+    </div>
+    <% if item.discount.present? %>
+      <div class="ribbon sale">
+        <div class="theribbon">-<%= item.discount %>%</div>
+        <div class="ribbon-background"></div>
+      </div>
+    <% end %>
+    <% if is_new_book? item.created_at %>
+      <div class="ribbon new">
+        <div class="theribbon"><%= t "new" %></div>
+        <div class="ribbon-background"></div>
+      </div>
+    <% end %>
+  </div>
+</div>
