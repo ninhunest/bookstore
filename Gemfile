@@ -17,6 +17,7 @@ gem "jbuilder", "2.7.0"
 gem "jquery-rails", "4.3.1"
 gem "kaminari"
 gem "mini_magick", "4.7.0"
+gem "mysql2"
 gem "paperclip", "~> 4.1"
 gem "puma", "3.9.1"
 gem "rails", "5.1.2"
@@ -26,6 +27,7 @@ gem "social-share-button", "~> 0.1.6"
 gem "turbolinks", "5.0.1"
 gem "uglifier", "3.2.0"
 gem "waypoints-rails"
+
 group :development, :test do
   gem "autoprefixer-rails"
   gem "better_errors"
@@ -58,7 +60,6 @@ group :development do
   gem "listen", "3.0.8"
   gem "spring", "2.0.2"
   gem "spring-watcher-listen", "2.0.1"
-  gem "sqlite3"
   gem "web-console", "3.5.1"
 end
 
