@@ -41,9 +41,26 @@
   </div>
   <div class="project-more col-sm-3">
     <h4><%= t "category" %></h4>
-    <%= link_to @book.category.name, "#" %>
+    <% if @book.category.present? %>
+      <%= link_to @book.category.name, "#" %>
+    <% else %>
+      <%= t "updating" %>
+    <% end %>
+
     <h4><%= t "author" %></h4>
+    <% if @book.authors.present? %>
       <%= render partial: "author", collection: @authors %>
+    <% else %>
+      <%= t "updating" %>
+    <% end %>
+
+    <h4><%= t "publisher" %></h4>
+    <% if @book.publisher.present? %>
+      <%= link_to @book.publisher.name, "#" %>
+    <% else %>
+      <%= t "updating" %>
+    <% end %>
+
     <h4><%= t "publishing_date" %></h4>
     <p><%= @book.created_at.strftime Settings.format_time %></p>
     <%= social_share_button_tag @book.title %>
@@ -52,37 +69,37 @@
 <div class="box" id="details">
   <%= @book.description %>
 </div>
-<div id="comments">
+<div >
   <div class="comment-tabs">
-    <ul class="media-list">
+    <ul class="media-list" id="comments">
       <%= render partial: "comments", collection: @comments, as: :comment %>
-    </ul>
-  </div>
+  </ul>
+</div>
+
 </div>
 <% if user_signed_in? %>
   <div id="comment-form">
     <h4 class="text-uppercase"><%= t "leave_comments" %></h4>
-    <form>
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="form-group">
-            <label for="comment">
-              <%= t "comment" %> <span class="required">*</span>
-            </label>
-            <textarea class="form-control" id="comment"
-              rows="<%= Settings.textarea.number_rows %>">
-            </textarea>
+      <%= form_for @comment, remote: true do |f| %>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <%= f.hidden_field :book_id, value: @book.id %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.text_area :content, class: "form-control comment_field",
+                rows: Settings.textarea.number_rows %>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12 text-right">
-          <button class="btn btn-template-main">
-            <i class="fa fa-comment-o"></i> <%= t "post_comment" %>
-          </button>
+        <div class="row">
+          <div class="col-sm-12 text-right">
+            <%= f.button :submit, class: "btn btn-template-main" do %>
+              <i class="fa fa-comment-o"></i>
+              <%= t "post_comment" %>
+            <% end %>
+          </div>
         </div>
-      </div>
-    </form>
+      <% end %>
   </div>
 <% else %>
   <%= link_to t("sign_in_to_comment"), new_user_session_path %>

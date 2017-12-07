@@ -39,14 +39,21 @@
     <div class="navbar navbar-default yamm" role="navigation" id="navbar">
       <div class="container">
         <div class="navbar-header">
-          <%= link_to "#", class: "navbar-brand home" do %>
+
+          <%= link_to root_path, class: "navbar-brand home" do %>
             <img src="/assets/universal/logo.png" alt="Universal logo"
-              class="hidden-xs hidden-sm">
+              class="hidden-xs hidden-sm main_logo">
             <img src="/assets/universal/logo-small.png" alt="Universal logo"
               class="visible-xs visible-sm">
               <span class="sr-only"><%= t "back_to_home_page" %></span>
           <% end %>
+
           <div class="navbar-buttons">
+            <button type="button" class="btn btn-info btn-lg"
+              data-toggle="modal" data-target="#myModal">
+              <%= t "filter_book" %>
+            </button>
+
             <button type="button" class="navbar-toggle btn-template-main"
               data-toggle="collapse" data-target="#navigation">
               <span class="sr-only"><%= t "toggle_navigation" %></span>
@@ -77,3 +84,4 @@
     </div>
   </div>
 </header>
+<%= render "shared/filter_form" %>

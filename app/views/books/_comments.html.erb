@@ -1,6 +1,7 @@
 <li class="media">
   <%= link_to "#", class: "pull-left" do %>
-    <%= image_tag comment.user.avatar, class: "media-object img-circle user_avatar" %>
+    <%= image_tag comment.user.avatar, class: "media-object img-circle
+      user_avatar" %>
   <% end %>
   <div class="media-body">
     <div class="well well-lg">
@@ -19,6 +20,11 @@
         data: {toggle: "collapse"} do %>
         <span class="glyphicon glyphicon-comment"></span>
         <%= load_reply(comment).size %> <%= t "replies" %>
+      <% end %>
+      <%= link_to comment_path(comment),
+        class: "btn btn-danger btn-circle text-uppercase",
+        method: :delete, remote: true do %>
+        <%= t "delete_comment" %>
       <% end %>
     </div>
   </div>

@@ -3,50 +3,50 @@
   height: 69px;
 }
 
-.small_price{
+.small_price {
   font-size: 20px;
 }
 
-.image_home{
+.image_home {
   height: 200px;
 }
 
-.image_medium{
+.image_medium {
   height: 290px;
 }
 
-.remember_me{
+.remember_me {
   padding-left: 15px;
 }
 
-.log_in{
+.log_in {
   text-align: center
 }
 
-.no_padding{
+.no_padding {
   padding: 0px
 }
 
-.center_title{
+.center_title {
   text-align: center;
 }
 
-.user_avatar{
+.user_avatar {
   height: 150px;
   width: 150px;
 }
 
-.avatar_preview{
+.avatar_preview {
   width: 200px;
   height: 150px;
 }
 
-.ava_exist{
+.ava_exist {
   max-width: 200px;
   max-height: 150px;
 }
 
-.time_with_hour{
+.time_with_hour {
   width: 200px;
 }
 
@@ -62,7 +62,7 @@
   width: 10%;
 }
 
-.checkbox{
+.checkbox {
   display: block;
   border: 1px solid grey;
   padding: 5px;
@@ -71,11 +71,18 @@
   height: 200px;
 }
 
-.check{
-  padding-left: 20px;
-}
-
 .notice::after {
   content: "*";
   color: red;
+}
+.check {
+  padding-left: 20px;
+}
+
+.main_logo {
+  max-height: 42px;
+}
+
+.no_padding_left {
+  padding-left: 0px;
 }

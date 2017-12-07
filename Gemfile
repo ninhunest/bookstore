@@ -17,6 +17,7 @@ gem "jbuilder", "2.7.0"
 gem "jquery-rails", "4.3.1"
 gem "kaminari"
 gem "mini_magick", "4.7.0"
+gem "mysql2"
 gem "paperclip", "~> 4.1"
 gem "puma", "3.9.1"
 gem "rails", "5.1.2"
@@ -26,13 +27,15 @@ gem "social-share-button", "~> 0.1.6"
 gem "turbolinks", "5.0.1"
 gem "uglifier", "3.2.0"
 gem "waypoints-rails"
+
 group :development, :test do
   gem "autoprefixer-rails"
   gem "better_errors"
   gem "brakeman", require: false
   gem "bundler-audit"
   gem "database_cleaner"
-  gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails", require: false
+  gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails",
+    require: false
   gem "factory_bot_rails"
   gem "guard-rspec", require: false
   gem "jshint"

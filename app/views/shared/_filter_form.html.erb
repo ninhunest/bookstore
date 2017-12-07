@@ -1,0 +1,62 @@
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <%= form_tag books_path, :method => "get", id: "search_form" do %>
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+          <h4 class="modal-title"><%= t "filter_book" %></h4>
+        </div>
+        <div class="modal-body">
+            <%= label_tag t("book_title"), nil, class: "col-md-3" %>
+            <%= text_field_tag "search[title]",
+              show_title_param,
+              placeholder: t(".enter_book_title"), class: "col-md-9" %>
+
+            <br><br>
+
+            <%= label_tag t(".select_category"), nil, class: "col-md-3" %>
+            <%= select_tag "search[category]",
+              options_for_select(load_categories.collect{|u| [u.name,
+                u.id]}, selected: show_category_param),
+              prompt: t("select_all"), class: "col-md-9" %>
+
+            <br><br>
+
+            <%= label_tag t(".select_author"), nil, class: "col-md-3" %>
+            <%= select_tag "search[author]",
+              options_for_select(load_authors.collect{|u| [u.name,
+                u.id]}, selected: show_author_param),
+              prompt: t("select_all"), class: "col-md-9" %>
+
+            <br><br>
+
+            <%= label_tag t(".select_publisher"), nil, class: "col-md-3" %>
+            <%= select_tag "search[publisher]",
+              options_for_select(load_publishers.collect{|u| [u.name,
+                u.id]}, selected: show_publisher_param),
+              prompt: t("select_all"), class: "col-md-9" %>
+
+            <br><br>
+
+            <%= label_tag t(".select_price"), nil, class: "col-md-3" %>
+            <%= label_tag t("from"), nil, class: "col-md-1 no_padding_left" %>
+            <%= text_field_tag "search[price_from]", show_price_from_param,
+              class: "col-md-3" %>
+            <%= label_tag t("to"), nil, class: "col-md-1" %>
+            <%= text_field_tag "search[price_to]", show_price_to_param,
+              class: "col-md-3" %>
+
+            <br>
+        </div>
+        <div class="modal-footer">
+          <%= submit_tag "Search", :name => nil, class: "btn btn-default" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+            <%= t "close" %>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
