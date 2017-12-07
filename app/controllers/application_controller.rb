@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include BooksHelper
   include CommentsHelper
+  include CategoriesHelper
+  include PublishersHelper
 
   before_action :configure_permitted_parameters, if: :devise_controller?
 

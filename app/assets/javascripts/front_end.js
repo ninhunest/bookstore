@@ -1,8 +1,6 @@
 //= require jquery
-//= require jquery_ujs
 //= require rails-ujs
 //= require turbolinks
-//= require bootstrap
 //= require bootstrap-hover-dropdown
 //= require jquery.min
 //= require bootstrap.min

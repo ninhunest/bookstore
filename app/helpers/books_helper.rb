@@ -12,4 +12,19 @@ module BooksHelper
   def is_new_book? created_at
     return created_at > Settings.books.previous_week.weeks.ago
   end
+
+  def show_title_param
+    (params[:search].present? && params[:search][:title].present?) ?
+      params[:search][:title] : nil
+  end
+
+  def show_price_from_param
+    (params[:search].present? && params[:search][:price_from].present?) ?
+      params[:search][:price_from] : nil
+  end
+
+  def show_price_to_param
+    (params[:search].present? && params[:search][:price_to].present?) ?
+      params[:search][:price_to] : nil
+  end
 end

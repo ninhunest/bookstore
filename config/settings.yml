@@ -20,3 +20,5 @@ user_avatar:
   missing_url: "/images/:style/missing.png"
 textarea:
   number_rows: 7
+comments:
+  limit: 3
