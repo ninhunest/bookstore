@@ -1,0 +1,48 @@
+<footer id="footer">
+  <div class="container">
+    <div class="col-md-3 col-sm-6">
+      <h4><%= t "about_us" %></h4>
+      <p><%= t "web_desciption" %></p>
+      <hr>
+      <hr class="hidden-md hidden-lg hidden-sm">
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h4><%= t "links" %></h4>
+      <div class="blog-entries">
+        <div class="item same-height-row clearfix">
+          <div class="image same-height-always">
+            <%= link_to t("home"), "#" %>
+          </div>
+        </div>
+        <div class="item same-height-row clearfix">
+          <div class="image same-height-always">
+            <%= link_to t("share"), "#" %>
+          </div>
+        </div>
+      </div>
+      <hr class="hidden-md hidden-lg">
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h4><%= t "contact" %></h4>
+      <p><strong><%= t "framgia_inc" %></strong>
+        <%= t "company_address" %>
+      </p>
+      <hr class="hidden-md hidden-lg hidden-sm">
+    </div>
+    <div class="col-md-3 col-sm-6">
+      <h4><%= t "admin" %></h4>
+      <div class="photostream">
+        <div>
+          <%= link_to "#", class: "img-responsive" do %>
+            <%= image_tag "toan.jpg", class: "small_icon_avatar" %>
+          <% end %>
+        </div>
+        <div>
+          <%= link_to "#", class: "img-responsive" do %>
+            <%= image_tag "ninh.jpg", class: "small_icon_avatar" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,56 @@
+<div class="portlet light portlet-fit bordered">
+  <div class="portlet-title">
+    <div class="caption">
+      <i class="icon-bubble font-dark"></i>
+      <span class="caption-subject font-dark bold uppercase"><%= t "books" %></span>
+    </div>
+    <div class="actions">
+      <div class="btn-group">
+        <%= link_to t("Create new book"), new_admin_book_path,
+          class: "btn dark btn-outline btn-circle btn-sm" %>
+      </div>
+    </div>
+  </div>
+  <div class="portlet-body">
+    <div class="table-scrollable">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th> # </th>
+            <th> <%= t "title" %> </th>
+            <th> <%= t "price" %> </th>
+            <th> <%= t "category" %> </th>
+            <th> <%= t "Created_at" %> </th>
+            <th colspan="2"> <%= t "Actions" %> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @books.each_with_index do |book, index| %>
+            <tr>
+              <td> <%= index + 1 %> </td>
+              <td> <%= truncate book.title, length: 70 %> </td>
+              <td> <%= link_to book.category.name %> </td>
+              <td> <%= link_to book.price %> </td>
+              <td> <%= post.created_at.strftime "%d-%m-%Y" %> </td>
+              <td>
+                <%= link_to t("View"), book_path(book),
+                  class: "btn btn-sm grey-salsa btn-outline" %>
+              </td>
+              <td align="center">
+                <%= link_to t("Edit"), edit_admin_book_path(book),
+                  class: "btn btn-sm grey-salsa btn-outline" %>
+              </td>
+              <td align="center">
+                <%= link_to t("Destroy"), admin_book_path(book.id),
+                  method: :delete, data: {confirm: t("sure")},
+                  class: "btn btn-sm grey-salsa btn-outline" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<%= will_paginate @books %>
