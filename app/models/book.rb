@@ -12,4 +12,8 @@ class Book < ApplicationRecord
   end)
 
   scope :except_current_book, ->book {where("id != ?", book.id)}
+
+  scope :attributes_select, (lambda do
+    select :id, :title, :price, :created_at, :updated_at, :category_id
+  end)
 end

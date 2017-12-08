@@ -1,4 +1,4 @@
-.small_icon_avatar{
+.small_icon_avatar {
   width: 69px;
   height: 69px;
 }
@@ -37,4 +37,25 @@
 }
 .time_with_hour{
   width: 200px;
+}
+#title,
+#category,
+#author,
+#publisher {
+  width: 20%;
+}
+#price,
+#discount {
+  width: 10%;
+}
+.checkbox{
+  display: block;
+  border: 1px solid grey;
+  padding: 5px;
+  margin-top: 5px;
+  width: 50%;
+  height: 200px;
+}
+.check{
+  padding-left: 20px;
 }

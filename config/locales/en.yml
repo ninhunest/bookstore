@@ -49,6 +49,9 @@ en:
   user_login: "User login"
   view_all: "View all"
   welcome: "Welcome"
+  create_book: "create book"
+  failed_create: "failed_create"
+  create: "create"
 
   layouts:
     login:

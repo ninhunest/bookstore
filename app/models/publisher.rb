@@ -9,4 +9,8 @@ class Publisher < ApplicationRecord
       Publisher.select_fields.find publisher_ids
     end
   end
+
+  scope :attributes_select_publisher, (lambda do
+    select :id, :name
+  end)
 end
