@@ -2,11 +2,11 @@
   <div class="portlet-title">
     <div class="caption">
       <i class="icon-bubble font-dark"></i>
-      <span class="caption-subject font-dark bold uppercase"><%= t ".categories" %></span>
+      <span class="caption-subject font-dark bold uppercase"><%= t ".cauthors" %></span>
     </div>
     <div class="actions">
       <div class="btn-group">
-        <%= link_to t("create_new_category"), new_admin_category_path,
+        <%= link_to t("create_new_author"), new_admin_author_path,
           class: "btn dark btn-outline btn-circle btn-sm" %>
       </div>
     </div>
@@ -16,17 +16,17 @@
       <table class="table table-bordered table-hover">
         <thead>
           <tr>
-            <th><%= t"stt" %></th>
+            <th><%= t "stt" %></th>
             <th><%= t "name" %></th>
             <th><%= t "created_at" %></th>
-            <th colspan="2"> <%= t "actions" %> </th>
+            <th colspan="2"><%= t "actions" %></th>
           </tr>
         </thead>
         <tbody>
-          <%= render partial: "category", collection: @categories %>
+          <%= render partial: "author", collection: @authors %>
         </tbody>
       </table>
-      <%= paginate @categories %>
+      <%= paginate @authors %>
     </div>
   </div>
 </div>

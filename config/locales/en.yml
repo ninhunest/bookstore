@@ -56,7 +56,7 @@ en:
   create: "create"
   sure: "sure"
   deleted: "deleted"
-  delete_failed: "delete_failed"
+  delete_failed: "delete failed"
   users_management: "Users"
   create_category: "create category"
   create_publisher: "create publisher"
@@ -80,6 +80,7 @@ en:
   update: "Update"
   edit: "Edit"
   go_cpanel: "Go CPanel"
+  create_author: "created author"
 
   layouts:
     login:

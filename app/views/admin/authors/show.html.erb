@@ -1,0 +1,29 @@
+<div class="portlet light portlet-fit bordered">
+  <div class="portlet-title">
+    <div class="caption">
+      <i class="icon-bubble font-dark"></i>
+      <span class="caption-subject font-dark bold uppercase">
+        <%= t "list_book_by" %> <%= @author.name %></span>
+    </div>
+  </div>
+  <div class="portlet-body">
+    <div class="table-scrollable">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th> # </th>
+            <th> <%= t "title" %> </th>
+            <th> <%= t "price" %> </th>
+            <th> <%= t "category" %> </th>
+            <th> <%= t "created_at" %> </th>
+            <th colspan="2"> <%= t "actions" %> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "admin/books/book", collection: @books %>
+        </tbody>
+      </table>
+      <%= paginate @books %>
+    </div>
+  </div>
+</div>
