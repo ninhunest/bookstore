@@ -1,11 +1,11 @@
 class Admin::BooksController < Admin::AdminController
   before_action :load_categories, :load_authors, :load_publishers,
     only: %i(new edit)
-  before_action :load_book, except: %i(index new)
+  before_action :load_book, only: %i(edit update destroy)
 
   def index
     @books = Book.attributes_select.order_by_created_at
-      .page(params[:page]).per Settings.books.per_page
+      .page(params[:page]).per Settings.per_page
   end
 
   def new

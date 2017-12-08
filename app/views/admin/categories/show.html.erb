@@ -2,13 +2,7 @@
   <div class="portlet-title">
     <div class="caption">
       <i class="icon-bubble font-dark"></i>
-      <span class="caption-subject font-dark bold uppercase"><%= t ".books" %></span>
-    </div>
-    <div class="actions">
-      <div class="btn-group">
-        <%= link_to t("Create new book"), new_admin_book_path,
-          class: "btn dark btn-outline btn-circle btn-sm" %>
-      </div>
+      <span class="caption-subject font-dark bold uppercase"><%= @category.name %></span>
     </div>
   </div>
   <div class="portlet-body">
@@ -16,7 +10,7 @@
       <table class="table table-bordered table-hover">
         <thead>
           <tr>
-            <th> <%= t "stt" %> </th>
+            <th> # </th>
             <th> <%= t "title" %> </th>
             <th> <%= t "price" %> </th>
             <th> <%= t "category" %> </th>
@@ -25,7 +19,7 @@
           </tr>
         </thead>
         <tbody>
-          <%= render partial: "book", collection: @books %>
+          <%= render partial: "admin/books/book", collection: @books %>
         </tbody>
       </table>
       <%= paginate @books %>

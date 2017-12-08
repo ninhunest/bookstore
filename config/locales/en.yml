@@ -56,6 +56,7 @@ en:
   deleted: "deleted"
   delete_failed: "delete_failed"
   users_management: "Users"
+  create_category: "create category"
   layouts:
     login:
       register_presentation: "It is easy and done in 1&nbsp;minute and gives you

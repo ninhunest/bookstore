@@ -2,52 +2,66 @@
   width: 69px;
   height: 69px;
 }
+
 .small_price{
   font-size: 20px;
 }
+
 .image_home{
   height: 200px;
 }
+
 .image_medium{
   height: 290px;
 }
+
 .remember_me{
   padding-left: 15px;
 }
+
 .log_in{
   text-align: center
 }
+
 .no_padding{
   padding: 0px
 }
+
 .center_title{
   text-align: center;
 }
+
 .user_avatar{
   height: 150px;
   width: 150px;
 }
+
 .avatar_preview{
   width: 200px;
   height: 150px;
 }
+
 .ava_exist{
   max-width: 200px;
   max-height: 150px;
 }
+
 .time_with_hour{
   width: 200px;
 }
+
 #title,
 #category,
 #author,
 #publisher {
   width: 20%;
 }
+
 #price,
 #discount {
   width: 10%;
 }
+
 .checkbox{
   display: block;
   border: 1px solid grey;
@@ -56,6 +70,12 @@
   width: 50%;
   height: 200px;
 }
+
 .check{
   padding-left: 20px;
+}
+
+.notice::after {
+  content: "*";
+  color: red;
 }

@@ -1,0 +1,18 @@
+<tr>
+  <td> <%= category_counter + 1 %> </td>
+  <td> <%= category.name %> </td>
+  <td> <%= category.created_at.strftime Settings.format_time %> </td>
+  <td>
+    <%= link_to t("view"), admin_category_path(category.id),
+      class: "btn btn-sm grey-salsa btn-outline" %>
+  </td>
+  <td align="center">
+    <%= link_to t("edit"), edit_admin_category_path(category),
+      class: "btn btn-sm grey-salsa btn-outline" %>
+  </td>
+  <td align="center">
+    <%= link_to t("destroy"), admin_category_path(category.id),
+      method: :delete, data: {confirm: t("sure")},
+      class: "btn btn-sm grey-salsa btn-outline" %>
+  </td>
+</tr>

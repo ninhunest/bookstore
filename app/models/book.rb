@@ -5,7 +5,6 @@ class Book < ApplicationRecord
   has_many :authors, through: :book_authors
   has_many :line_items, dependent: :destroy
   has_many :rates, dependent: :destroy
-
   mount_uploader :image_url, ImageUploader
 
   scope :select_fields, (lambda do
