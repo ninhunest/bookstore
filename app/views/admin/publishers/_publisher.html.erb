@@ -1,0 +1,21 @@
+<tr>
+  <td><%= publisher_counter + 1 %></td>
+  <td><%= publisher.name %></td>
+  <td><%= publisher.address %></td>
+  <td><%= publisher.email %></td>
+  <td><%= publisher.phone %></td>
+  <td><%= publisher.created_at.strftime Settings.format_time %></td>
+  <td>
+    <%= link_to t("view"), admin_publisher_path(publisher.id),
+      class: "btn btn-sm grey-salsa btn-outline" %>
+  </td>
+  <td align="center">
+    <%= link_to t("edit"), edit_admin_publisher_path(publisher),
+      class: "btn btn-sm grey-salsa btn-outline" %>
+  </td>
+  <td align="center">
+    <%= link_to t("destroy"), admin_publisher_path(publisher.id),
+      method: :delete, data: {confirm: t("sure")},
+      class: "btn btn-sm grey-salsa btn-outline" %>
+  </td>
+</tr>

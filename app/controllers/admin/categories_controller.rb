@@ -1,5 +1,5 @@
 class Admin::CategoriesController < Admin::AdminController
-  before_action :load_category, except: %i(new index)
+  before_action :load_category, except: %i(new create index)
 
   def index
     @categories = Category.category_attributes_select.order_by_created_at
@@ -45,6 +45,7 @@ class Admin::CategoriesController < Admin::AdminController
     else
       flash[:danger] = t "delete_failed"
     end
+
     redirect_to request.referrer
   end
 

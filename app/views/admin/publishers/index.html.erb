@@ -2,11 +2,11 @@
   <div class="portlet-title">
     <div class="caption">
       <i class="icon-bubble font-dark"></i>
-      <span class="caption-subject font-dark bold uppercase"><%= t ".books" %></span>
+      <span class="caption-subject font-dark bold uppercase"><%= t ".publishers" %></span>
     </div>
     <div class="actions">
       <div class="btn-group">
-        <%= link_to t("create_new_book"), new_admin_book_path,
+        <%= link_to t("create_new_publisher"), new_admin_publisher_path,
           class: "btn dark btn-outline btn-circle btn-sm" %>
       </div>
     </div>
@@ -16,19 +16,20 @@
       <table class="table table-bordered table-hover">
         <thead>
           <tr>
-            <th> <%= t "stt" %> </th>
-            <th> <%= t "title" %> </th>
-            <th> <%= t "price" %> </th>
-            <th> <%= t "category" %> </th>
-            <th> <%= t "created_at" %> </th>
-            <th colspan="2"> <%= t "actions" %> </th>
+            <th><%= t"stt" %></th>
+            <th><%= t "name" %></th>
+            <th><%= t "address" %></th>
+            <th><%= t "email" %></th>
+            <th><%= t "phone" %></th>
+            <th><%= t "created_at" %></th>
+            <th colspan="2"><%= t "actions" %></th>
           </tr>
         </thead>
         <tbody>
-          <%= render partial: "book", collection: @books %>
+          <%= render partial: "publisher", collection: @publishers,
+            as: :publisher %>
         </tbody>
       </table>
-      <%= paginate @books %>
     </div>
   </div>
 </div>

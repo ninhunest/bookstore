@@ -57,6 +57,7 @@ en:
   delete_failed: "delete_failed"
   users_management: "Users"
   create_category: "create category"
+  create_publisher: "create publisher"
   layouts:
     login:
       register_presentation: "It is easy and done in 1&nbsp;minute and gives you
@@ -117,5 +118,3 @@ en:
     unlocks:
       new:
         resend_unlock_instructions: "Resend unlock instructions"
-
-
