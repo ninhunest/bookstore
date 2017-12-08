@@ -12,4 +12,7 @@ class Author < ApplicationRecord
       Author.select_fields.find author_ids
     end
   end
+  scope :author_attributes_select, (lambda do
+    select :id, :name, :created_at, :updated_at
+  end)
 end
