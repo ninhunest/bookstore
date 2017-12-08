@@ -10,4 +10,8 @@ class Book < ApplicationRecord
     select :id, :title, :image_url, :price,
      :discount, :created_at
   end)
+  scope :attributes_select, (lambda do
+    select :id, :title,
+      :price, :created_at, :updated_at, :category_id
+  end)
 end

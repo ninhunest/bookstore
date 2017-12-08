@@ -1,0 +1,21 @@
+<tr>
+  <td> <%= book_counter + 1 %> </td>
+  <td> <%= truncate book.title, length: Settings.book_title %> </td>
+  <td> <%= link_to book.category.name, "#" %> </td>
+  <td> <%= book.price %> </td>
+  <td> <%= book.created_at.strftime Settings.time_model %> </td>
+  <td>
+    <%= link_to t("view"), book_path(book),
+      class: "btn btn-sm grey-salsa btn-outline" %>
+  </td>
+  <td align="center">
+    <%= link_to t("edit"), edit_admin_book_path(book),
+      class: "btn btn-sm grey-salsa btn-outline" %>
+  </td>
+  <td align="center">
+    <%= link_to t("destroy"), admin_book_path(book.id),
+      method: :delete, data: {confirm: t("sure")},
+      class: "btn btn-sm grey-salsa btn-outline" %>
+  </td>
+</tr>
+<%= paginate @books %>

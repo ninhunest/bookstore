@@ -6,4 +6,5 @@ books:
 hot_items:
   limit: 10
 percentage: 100
-
+book_title: 70
+time_model: "%d-%m-%Y"

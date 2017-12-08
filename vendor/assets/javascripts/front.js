@@ -41,7 +41,7 @@ function demo() {
 
 	return false;
     });
-    
+
     $("#layout").change(function () {
 
 	if ($(this).val() !== '') {
@@ -50,14 +50,14 @@ function demo() {
 
             $('body').removeClass('wide');
             $('body').removeClass('boxed');
-            
+
             $('body').addClass(theme_layout);
 
 	    $.cookie("theme_layout", theme_layout, {expires: 365, path: '/'});
 	}
 
 	return false;
-    });    
+    });
 }
 
 /* slider homepage */

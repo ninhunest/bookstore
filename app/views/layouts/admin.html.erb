@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "application", media: "all",
+    "data-turbolinks-track": "reload" %>
+  <%= javascript_include_tag "application",
+    "data-turbolinks-track": "reload" %>
+  <title><%= t "admin" %></title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="" name="description" />
+  <meta content="" name="author" />
+</head>
+
+<body class="page-container-bg-solid page-header-fixed page-sidebar-closed-hide-logo page-md">
+  <div class="page-header navbar navbar-fixed-top">
+    <div class="page-header-inner ">
+      <div class="page-logo">
+        <%= link_to "#", class: "navbar-brand home" do %>
+          <%= image_tag "/assets/universal/logo.png", class: "hidden-xs hidden-sm" %>
+        <% end %>
+        <div class="menu-toggler sidebar-toggler">
+        </div>
+      </div>
+      <div class="page-top">
+        <div class="top-menu">
+          <ul class="nav navbar-nav pull-right">
+            <li class="dropdown dropdown-user dropdown-dark">
+              <a href="javascript:;" class="dropdown-toggle"
+                data-toggle="dropdown"
+                data-hover="dropdown" data-close-others="true">
+                <span class="username username-hide-on-mobile"><%= t "admin" %>
+                </span>
+              </a>
+                <ul class="dropdown-menu dropdown-menu-default">
+                  <li>
+                    <%= link_to t("profile"), "#" %>
+                  </li>
+                </ul>
+            </li>
+          </ul>
+        </div>
+          <div class="top-menu">
+            <ul class="nav navbar-nav pull-right">
+              <li>
+                <%= link_to t("home"), root_path %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-container">
+      <div class="page-sidebar-wrapper">
+        <div class="page-sidebar navbar-collapse collapse">
+          <ul class="page-sidebar-menu"
+            data-keep-expanded="false"
+            data-auto-scroll="true" data-slide-speed="200">
+            <li class="nav-item  ">
+              <%= link_to t("dashboard"),"#", class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t(".books"), admin_books_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item  ">
+              <%= link_to t("users"), "#", class: "nav-link" %>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="page-content-wrapper">
+        <div class="page-content">
+          <% flash.each do |key, value| %>
+            <div class="alert alert-<%= key %>"><%= value %></div>
+          <% end %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <div class="page-footer">
+      <div class="page-footer-inner">
+        <%= t "copy" %>
+      </div>
+      <div class="scroll-to-top">
+        <i class="icon-arrow-up"></i>
+      </div>
+    </div>
+  </body>
+</html>
