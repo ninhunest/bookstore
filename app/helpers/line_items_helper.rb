@@ -12,4 +12,24 @@ module LineItemsHelper
 
     total
   end
+
+  def sub_total_price cart
+    items = cart.line_items
+    @sub_total = Settings.sub_total
+
+    items.each do |item|
+      quantity = item.quantity
+      book = Book.with_deleted.find_by id: item.item_id
+
+      if book.discount.present?
+        price = book.price - book.discount.to_f/Settings.percentage * book.price
+      else
+        price = book.price
+      end
+
+      @sub_total += price * quantity
+    end
+
+    @sub_total
+  end
 end

@@ -94,3 +94,7 @@
 .viewed {
   position: absolute;
 }
+
+.book-item {
+  min-height: 420px;
+}

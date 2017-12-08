@@ -1,0 +1,12 @@
+<tr>
+  <td><%= line_item_counter + 1 %></td>
+  <td><%= line_item.book.title %></td>
+  <td><%= format_price line_item.book.price %></td>
+  <td>
+    <% if line_item.book.discount.present? %>
+      <%= line_item.book.discount %>%
+    <% end %>
+  </td>
+  <td><%= line_item.quantity %></td>
+  <td><%= format_price count_total_price line_item %></td>
+</tr>

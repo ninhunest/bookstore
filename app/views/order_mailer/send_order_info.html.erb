@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= t "hi" %>  <%= @custom_name %></h1>
+    <p><%= t "order_notice" %></p>
+    <br>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th><%= t "index" %></th>
+          <th><%= t "book_title" %></th>
+          <th><%= t "price" %></th>
+          <th><%= t "discount" %></th>
+          <th><%= t "quantity" %></th>
+          <th><%= t "total" %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "mail_line_item",
+          collection: @custom_cart.line_items, as: :line_item %>
+      </tbody>
+    </table>
+    <h2>
+      <%= t "sub_total" %> <%= format_price sub_total_price @custom_cart %>
+    </h2>
+  </body>
+</html>

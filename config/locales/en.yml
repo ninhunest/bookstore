@@ -82,6 +82,10 @@ en:
   go_cpanel: "Go CPanel"
   create_author: "created author"
   save: "save"
+  order_notice: "You have order successfully at BookStore"
+  order_successfully: "Order successfully"
+  sub_total: "Sub total:"
+
   layouts:
     login:
       register_presentation: "It is easy and done in 1&nbsp;minute and gives
