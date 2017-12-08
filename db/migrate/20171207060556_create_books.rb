@@ -5,7 +5,7 @@ class CreateBooks < ActiveRecord::Migration[5.1]
       t.text :description, null: false
       t.string :image_url
       t.decimal :price, precision: 8, null: false
-      t.decimal :p_price, precision: 8
+      t.integer :discount
       t.integer :view
       t.references :publisher, foreign_key: true
       t.references :author, foreign_key: true

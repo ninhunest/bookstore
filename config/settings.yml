@@ -1,0 +1,9 @@
+unit_price: "vnđ"
+books:
+  precision_min: 0
+  previous_week: 1
+  per_page: 18
+hot_items:
+  limit: 10
+percentage: 100
+

@@ -1,1 +1,53 @@
-<h1><%= t "book" %></h1>
+<div class="col-sm-3">
+  <div class="panel panel-default sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= t ".hot_categories" %></h3>
+      <%= link_to "#", class: "btn btn-xs btn-success pull-right" do %>
+        <span class="hidden-sm"><%= t "view_all" %></span>
+      <% end %>
+    </div>
+    <div class="panel-body">
+      <ul class="nav nav-pills nav-stacked category-menu">
+        <%= render partial: "category_items", collection: @categories,
+          as: :item %>
+      </ul>
+    </div>
+  </div>
+  <div class="panel panel-default sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= t ".hot_authors" %></h3>
+      <%= link_to "#", class: "btn btn-xs btn-success pull-right" do %>
+        <span class="hidden-sm"><%= t "view_all" %></span>
+      <% end %>
+    </div>
+    <div class="panel-body">
+      <ul class="nav nav-pills nav-stacked category-menu">
+        <%= render partial: "category_items", collection: @authors,
+          as: :item %>
+      </ul>
+    </div>
+  </div>
+  <div class="panel panel-default sidebar-menu">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= t ".hot_publishers" %></h3>
+      <%= link_to "#", class: "btn btn-xs btn-success pull-right" do %>
+        <span class="hidden-sm"><%= t "view_all" %></span>
+      <% end %>
+    </div>
+    <div class="panel-body">
+      <ul class="nav nav-pills nav-stacked category-menu">
+        <%= render partial: "category_items", collection: @publishers,
+          as: :item %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="col-sm-9">
+  <div class="row products">
+    <%= render partial: "book_items", collection: @books, as: :item %>
+  </div>
+  <div class="pages">
+    <%= paginate @books %>
+  </div>
+</div>
