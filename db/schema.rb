@@ -29,14 +29,14 @@ ActiveRecord::Schema.define(version: 20171211083352) do
     t.string "title", null: false
     t.text "description", null: false
     t.string "image_url"
-    t.integer "price", null: false
+    t.decimal "price", precision: 8, null: false
+    t.integer "discount"
     t.integer "view"
     t.integer "publisher_id"
     t.integer "author_id"
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "discount"
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["category_id"], name: "index_books_on_category_id"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
@@ -149,4 +149,5 @@ ActiveRecord::Schema.define(version: 20171211083352) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 end

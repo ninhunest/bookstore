@@ -5,7 +5,6 @@
  *= require bootstrap.min
  *= require universal/animate
  *= require universal/style.default
- *= require social-share-button
  *= require ui-comment/comment
  *= require bootstrap-fileinput/bootstrap-fileinput
  *= require custom.css
