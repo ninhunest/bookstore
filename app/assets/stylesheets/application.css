@@ -4,7 +4,21 @@
  *= require font-awesome
  *= require bootstrap.min
  *= require universal/animate
- *= require universal/custom
- *= require universal/style.default
+ *= require style.default
+ *= require simple-line-icons.min
+ *= require bootstrap-switch.min
+ *= require daterangepicker.min
+ *= require morris
+ *= require fullcalendar.min
+ *= require jqvmap
+ *= require plugins-md.min
+ *= require layout.min
+ *= require light.min
+ *= require components-md.min
+ *= require bootstrap-fileinput
+ *= require bootstrap-datepicker3.min
+ *= require bootstrap-timepicker.min
+ *= require bootstrap-datepicker.min
+ *= require fontsfamily
  *= require_tree .
  */
