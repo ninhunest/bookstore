@@ -21,4 +21,6 @@
  *= require bootstrap-datepicker.min
  *= require fontsfamily
  *= require_tree .
+ *= require social-share-button
+ *= require ui-comment/comment
  */

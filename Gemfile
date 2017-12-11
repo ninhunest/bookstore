@@ -19,6 +19,7 @@ gem "puma", "3.9.1"
 gem "rails", "5.1.2"
 gem "rails-i18n"
 gem "sass-rails", "5.0.6"
+gem "social-share-button", "~> 0.1.6"
 gem "turbolinks", "5.0.1"
 gem "uglifier", "3.2.0"
 gem "waypoints-rails"
@@ -27,6 +28,7 @@ group :development, :test do
   gem "better_errors"
   gem "brakeman", require: false
   gem "bundler-audit"
+  gem "byebug", "~> 9.0", ">= 9.0.6"
   gem "database_cleaner"
   gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails", require: false
   gem "factory_bot_rails"

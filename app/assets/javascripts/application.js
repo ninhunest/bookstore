@@ -6,11 +6,6 @@
 //= require bootstrap-hover-dropdown
 //= require jquery.min
 //= require bootstrap.min
-//= require universal/jquery.cookie
-//= require universal/waypoints.min
-//= require universal/jquery.counterup.min
-//= require universal/jquery.parallax-1.1.3
-//= require universal/front
 //= require js.cookie.min
 //= require bootstrap-hover-dropdown.min
 //= require jquery.slimscroll.min
