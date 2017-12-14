@@ -11,3 +11,30 @@
 .image_medium{
   height: 290px;
 }
+.remember_me{
+  padding-left: 15px;
+}
+.log_in{
+  text-align: center
+}
+.no_padding{
+  padding: 0px
+}
+.center_title{
+  text-align: center;
+}
+.user_avatar{
+  height: 150px;
+  width: 150px;
+}
+.avatar_preview{
+  width: 200px;
+  height: 150px;
+}
+.ava_exist{
+  max-width: 200px;
+  max-height: 150px;
+}
+.time_with_hour{
+  width: 200px;
+}

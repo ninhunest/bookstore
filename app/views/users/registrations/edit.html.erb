@@ -1,0 +1,79 @@
+<div class="col-md-8 col-md-offset-2">
+
+  <h2><%= t "edit" %> <%= resource_name.to_s.humanize %></h2>
+
+  <%= form_for resource, as: resource_name,
+    url: registration_path(resource_name), html: {method: :put} do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field">
+      <%= f.label :name, class: "col-md-5" %>
+      <%= f.text_field :name, class: "col-md-7" %>
+    </div>
+
+    <br><br>
+
+    <div class="field">
+      <%= f.label :email, class: "col-md-5" %>
+      <%= f.email_field :email, autofocus: true, class: "col-md-7" %>
+    </div>
+
+    <br><br>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>
+        <%= t ".waiting_confirmation" %>
+        <%= resource.unconfirmed_email %>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <div class="col-md-5 remember_me">
+        <%= f.label :password %>
+        <br>
+        <% if @minimum_password_length %>
+          <em>
+            <%= @minimum_password_length %> <%= t "characters_minimum" %>
+          </em>
+        <% end %>
+      </div>
+      <div class="col-md-7 no_padding">
+        <%= f.password_field :password, autocomplete: "off",
+          class: "col-md-12" %>
+        <br>
+        <i><%= t ".do_not_change_password" %></i>
+      </div>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation, class: "col-md-5" %>
+      <%= f.password_field :password_confirmation, autocomplete: "off",
+        class: "col-md-7" %>
+    </div>
+
+    <br><br>
+
+    <div class="field">
+      <%= f.label :current_password, class: "col-md-5" %>
+      <div class="col-md-7 no_padding">
+        <%= f.password_field :current_password, autocomplete: "off",
+          class: "col-md-12" %>
+      <br>
+      <i><%= t ".current_password_required" %></i>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update" %>
+    </div>
+  <% end %>
+
+  <h3><%= t ".cancel_account" %></h3>
+
+  <p><%= t ".unhappy" %>
+    <%= button_to t(".cancel_account"), registration_path(resource_name),
+      data: {confirm: t("are_you_sure")}, method: :delete %>
+  </p>
+  <%= link_to t("back"), :back %>
+
+</div>

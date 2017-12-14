@@ -1,36 +1,54 @@
 en:
-  hello: "Hello world"
+  back_to_home_page: "BookStore - Go to home page"
   book_store: "Book store"
+  contact: "Contact"
   contact_info: "Contact us on +420 777 555 333 or bookstore@gmail.com."
+  hello: "Hello world"
+  hot_books: "Hot books"
   sign_in: "Sign in"
   sign_up: "Sign up"
-  back_to_home_page: "BookStore - Go to home page"
   toggle_navigation: "Toggle navigation"
-  hot_books: "Hot books"
-  contact: "Contact"
   web_desciption: "Book store is a website which stores and presents a lot of
     interesting book for people. From this, we can figure out some favorite
     books and order easily."
   about_us: "About us"
   framgia_inc: "Framgia inc."
   company_address: "13F Keangnam Landmark 72 Tower, Plot E6, Pham Hung Road, Nam Tu Liem District., Ha Noi"
-  options: "Options"
   admin: "Admin"
-  links: "Links"
-  home: "Home"
-  share: "Share"
-  user_login: "User login"
-  not_registered_yet?: "Not registered yet?"
   admin_panel: "Admin panel"
-  categories: "Categories"
-  new: "New"
-  view_all: "View all"
+  are_you_sure: "Are you sure?"
+  back: "Back"
   book_not_found: "Book not found"
+  categories: "Categories"
+  change: "Change"
+  change_my_password: "Change my password"
+  characters_minimum: "characters minimum"
   close: "Close"
-  sharing_social: "Show it to your friends"
-  leave_comments: "Leave comments"
   comment: "Comment"
+  did_not_receive_unlock_email: "Didn't receive unlock instructions?"
+  dit_not_receive_email: "Didn't receive confirmation instructions?"
+  edit: "Edit"
+  forgot_password: "Forgot your password?"
+  hi: "Hi"
+  home: "Home"
+  leave_comments: "Leave comments"
+  links: "Links"
+  log_in: "Log in"
+  new: "New"
+  not_registered_yet?: "Not registered yet?"
+  options: "Options"
   post_comment: "Post comment"
+  replies: "replies"
+  reply: "Reply"
+  select_image: "Select image"
+  share: "Share"
+  sharing_social: "Show it to your friends"
+  sign_in_to_comment: "Sign in to leave your comment"
+  sign_in_with: "sign_in_with"
+  sign_out: "Sign out"
+  user_login: "User login"
+  view_all: "View all"
+  welcome: "Welcome"
 
   layouts:
     login:
@@ -43,5 +61,54 @@ en:
       hot_categories: "Hot categories"
       hot_publishers: "Hot publishers"
       books: "books"
+
     show:
       related_books: "You may also like these books"
+
+  users:
+    confirmations:
+      new:
+        resend_mail_confirm: "Resend confirmation instructions"
+    mailer:
+      confirmation_instructions:
+        link_below: "You can confirm your account email through the link below:"
+        confirm_account: "Confirm my account"
+      email_changed:
+        notify_email_change: "We're contacting you to notify you that your
+          email is being changed to"
+      password_change:
+        notify_password_change: "We're contacting you to notify you that your password has been changed."
+      reset_password_instructions:
+        link_to_change_password: "Someone has requested a link to change your password. You can do this through the link below."
+      ignore_reset_password_email: "If you didn't request this, please ignore
+        this email."
+      access_link: "Your password won't change until you access the link above
+        and create a new one."
+      unlock_instructions:
+        account_has_been_lock: "Your account has been locked due to an
+          excessive number of unsuccessful sign in attempts."
+        link_to_unlock: "Click the link below to unlock your account:"
+        unlock_account: "Unlock my account"
+    password:
+      edit:
+        change_password: "Change your password"
+        confirm_new_password: "Confirm new password"
+        new_password: "New password"
+      new:
+        forgot_password: "Forgot your password?"
+        send_reset_password: "Send me reset password instructions"
+    registrations:
+      edit:
+        waiting_confirmation: "Currently waiting confirmation for:"
+        do_not_change_password: "(leave blank if you don't want to change it)"
+        current_password_required:
+          "(we need your current password to confirm your changes)"
+        cancel_account: "Cancel my account"
+        unhappy: "Unhappy?"
+      new:
+        sign_up: "Sing up"
+    unlocks:
+      new:
+        resend_unlock_instructions: "Resend unlock instructions"
+
+

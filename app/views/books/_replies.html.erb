@@ -1,0 +1,20 @@
+<li class="media media-replied">
+  <%= link_to "#", class: "pull-left" do %>
+    <%= image_tag reply.user.avatar,
+      class: "media-object img-circle user_avatar" %>
+  <% end %>
+  <div class="media-body">
+    <div class="well well-lg">
+      <h4 class="media-heading text-uppercase reviews">
+        <span class="glyphicon glyphicon-share-alt"></span>
+        <%= reply.user.name %>
+      </h4>
+      <ul class="media-date text-uppercase reviews list-inline">
+        <li><%= reply.created_at.strftime Settings.format_time_with_hour %></li>
+      </ul>
+      <p class="media-comment">
+        <%= reply.content %>
+      </p>
+    </div>
+  </div>
+</li>
