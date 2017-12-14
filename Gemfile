@@ -1,4 +1,6 @@
 source "https://rubygems.org"
+
+gem "acts_as_shopping_cart"
 gem "acts_as_votable"
 gem "bcrypt", "3.1.11"
 gem "bootstrap-sass", "3.3.7"
@@ -25,6 +27,7 @@ gem "social-share-button", "~> 0.1.6"
 gem "turbolinks", "5.0.1"
 gem "uglifier", "3.2.0"
 gem "waypoints-rails"
+
 group :development, :test do
   gem "autoprefixer-rails"
   gem "better_errors"

@@ -1,0 +1,25 @@
+<tr>
+  <td>
+    <%= link_to "#" do %>
+      <%= image_tag line_item.book.image_url %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to "#" do %>
+      <%= line_item.book.title %>
+    <% end %>
+  </td>
+  <td>
+    <input type="number" value="<%= line_item.quantity %>"
+      class="form-control">
+  </td>
+  <td><%= format_price line_item.book.price %></td>
+  <td><%= line_item.book.discount %>%</td>
+  <td>$246.00</td>
+  <td>
+    <%= link_to line_item_path(line_item), remote: true,
+      method: :delete do %>
+      <i class="fa fa-trash-o"></i>
+    <% end %>
+  </td>
+</tr>

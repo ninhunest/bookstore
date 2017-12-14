@@ -1,4 +1,5 @@
 en:
+  add_to_cart: "Add to cart"
   hello: "Hello world"
   book_store: "Book store"
   contact_info: "Contact us on +420 777 555 333 or bookstore@gmail.com."
@@ -43,11 +44,16 @@ en:
   select_all: "Select all"
   updating: "Updating"
   filter_book: "Filter books"
+  quantity: "Quantity"
+  books: "Books"
+  price: "Price"
+  discount: "Discount"
+  total: "Total"
 
   layouts:
     login:
-      register_presentation: "It is easy and done in 1&nbsp;minute and gives you
-        access to order special books and much more!"
+      register_presentation: "It is easy and done in 1&nbsp;minute and gives
+        you access to order special books and much more!"
 
   books:
     index:
@@ -65,3 +71,8 @@ en:
       select_author: "Select author:"
       select_publisher: "Select publisher:"
       select_price: "Select price:"
+
+  carts:
+    index:
+      current_item: "You currently have"
+      item_in_cart: "item(s) in your cart."

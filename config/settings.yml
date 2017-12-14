@@ -21,3 +21,4 @@ textarea:
   number_rows: 7
 comments:
   limit: 3
+sub_total: 0
