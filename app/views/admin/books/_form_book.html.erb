@@ -1,0 +1,59 @@
+<%= form_for [:admin, @book] do |f| %>
+  <div class="form-group">
+    <%= f.label :title %><span class="required" aria-required="true"> * </span>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :category %><span class="required" aria-required="true"> * </span>
+    <%= f.select :category_id,
+      @categories.collect {|c| [ c.name, c.id ]},
+      {prompt: t("books.chose_category")},
+      class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :author %><span class="required" aria-required="true"> * </span>
+    <div class="checkbox">
+      <div class="check">
+        <%= f.collection_check_boxes(:author_ids, @authors,
+          :id, :name) do |b| %>
+        <%= b.label {b.check_box + b.text} %><br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :publisher %><span class="required" aria-required="true"> * </span>
+    <%= f.select :publisher_id,
+      @publishers.collect {|c| [ c.name, c.id ]},
+      {prompt: t("books.chose_publisher")},
+      class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :price %><span class="required" aria-required="true"> * </span>
+    <%= f.text_field :price, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :discount %><span class="required" aria-required="true"> * </span>
+    <%= f.text_field :discount, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %><span class="required" aria-required="true"> * </span>
+    <%= f.file_field :image_url,
+      accept: "image/jpeg,image/gif,image/png" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description, t("description") %> <br>
+    <%= f.text_area :description,class: "ckeditor" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit t("create"), class: "btn btn-primary" %>
+  </div>
+<% end %>

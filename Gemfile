@@ -3,8 +3,10 @@ gem "acts_as_votable"
 gem "bcrypt", "3.1.11"
 gem "bootstrap-sass", "3.3.7"
 gem "bootstrap-will_paginate", "1.0.0"
+gem "byebug"
 gem "carrierwave", "1.1.0"
 gem "carrierwave_direct"
+gem "ckeditor"
 gem "coffee-rails", "4.2.2"
 gem "config"
 gem "devise"
@@ -29,7 +31,6 @@ group :development, :test do
   gem "better_errors"
   gem "brakeman", require: false
   gem "bundler-audit"
-  gem "byebug", "~> 9.0", ">= 9.0.6"
   gem "database_cleaner"
   gem "eslint-rails", git: "https://github.com/octoberstorm/eslint-rails", require: false
   gem "factory_bot_rails"

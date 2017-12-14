@@ -1,7 +1,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require rails-ujs
-//= require turbolinks
 //= require bootstrap
 //= require bootstrap-hover-dropdown
 //= require jquery.min
@@ -47,9 +46,9 @@
 //= require layout.min
 //= require demo.min
 //= require quick-sidebar.min
-//= require ckeditor
 //= require bootstrap-datepicker.min
 //= require bootstrap-timepicker.min
 //= require bootstrap-datetimepicker.min
 //= require clockface
 //= require components-date-time-pickers.min
+//= require ckeditor/init
