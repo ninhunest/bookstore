@@ -49,6 +49,8 @@ en:
   price: "Price"
   discount: "Discount"
   total: "Total"
+  update: "Update"
+  edit: "Edit"
 
   layouts:
     login:

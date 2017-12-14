@@ -1,0 +1,70 @@
+<li class="media media-replied">
+  <%= link_to "#", class: "pull-left" do %>
+  <%= image_tag reply.user.avatar,
+    class: "media-object img-circle user_avatar" %>
+  <% end %>
+  <div class="media-body">
+    <div class="well well-lg">
+      <h4 class="media-heading text-uppercase reviews">
+        <%= reply.user.name %>
+      </h4>
+      <ul class="media-date text-uppercase reviews list-inline">
+        <li class="dd"><%= reply.created_at.strftime Settings.day_only %></li>
+        <li class="mm"><%= reply.created_at.strftime Settings.month_only %></li>
+        <li class="aaaa"><%= reply.created_at.strftime Settings.year_only %></li>
+      </ul>
+      <p class="media-comment">
+        <%= reply.content %>
+      </p>
+      <% if can_edit_comment? reply %>
+      <button type="button" class="btn btn-warning btn-circle
+        text-uppercase" data-toggle="modal"
+        data-target="#edit-reply-<%= reply.id %>">
+        <%= t "edit" %>
+      </button>
+      <div class="modal fade" id="edit-reply-<%= reply.id %>" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <%= form_for reply, method: :patch, remote: true  do |f| %>
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                  &times;
+                </button>
+                <h4 class="modal-title"><%= t "edit_comment" %></h4>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <%= f.hidden_field :id, value: reply.id %>
+                      <%= f.hidden_field :book_id, value: reply.book_id %>
+                      <%= f.hidden_field :user_id, value: reply.user_id %>
+                      <%= f.text_area :content, value: reply.content,
+                        class: "form-control comment_field",
+                        rows: Settings.textarea.number_rows %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <%= f.button :submit, class: "btn btn-default" do %>
+                  <%= t "update" %>
+                <% end %>
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  <%= t "close" %>
+                </button>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+        <%= link_to comment_path(reply),
+          class: "btn btn-danger btn-circle text-uppercase",
+          method: :delete, remote: true do %>
+          <%= t "delete" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</li>
