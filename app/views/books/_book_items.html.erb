@@ -15,7 +15,7 @@
         <% end %>
         <%= get_promotion_price item.price, item.discount %>
       </p>
-      <%= link_to "#" do %>
+      <%= link_to line_items_path(id: item), method: :post do %>
         <i class="fa fa-shopping-cart"></i>
         <%= t "add_to_cart" %>
       <% end %>

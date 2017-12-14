@@ -64,7 +64,11 @@
         <div class="navbar-collapse collapse" id="navigation">
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
-              <%= link_to t("home"), root_path %>
+              <%= link_to carts_path do %>
+                <%= image_tag "cart_icon.png", class: "cart_icon" %>
+                <%= total_items %> <%= t "products" %>,
+                <%= format_price total_price %>
+              <% end %>
             </li>
           </ul>
         </div>

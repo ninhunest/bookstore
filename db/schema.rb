@@ -12,20 +12,20 @@
 
 ActiveRecord::Schema.define(version: 20171210102155) do
 
-  create_table "authors", force: :cascade do |t|
+  create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "book_authors", force: :cascade do |t|
+  create_table "book_authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "book_id"
     t.integer "author_id"
     t.index ["author_id"], name: "index_book_authors_on_author_id"
     t.index ["book_id"], name: "index_book_authors_on_book_id"
   end
 
-  create_table "books", force: :cascade do |t|
+  create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title", null: false
     t.text "description", null: false
     t.string "image_url"
@@ -42,12 +42,12 @@ ActiveRecord::Schema.define(version: 20171210102155) do
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
   end
 
-  create_table "carts", force: :cascade do |t|
+  create_table "carts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "categories", force: :cascade do |t|
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.integer "parent_id"
     t.datetime "created_at", null: false
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20171210102155) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "content"
     t.integer "parent_id"
     t.integer "user_id"
@@ -77,19 +77,17 @@ ActiveRecord::Schema.define(version: 20171210102155) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "line_items", force: :cascade do |t|
-    t.integer "book_id"
-    t.integer "cart_id"
-    t.integer "order_id"
+  create_table "line_items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "owner_id"
+    t.string "owner_type"
     t.integer "quantity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_line_items_on_book_id"
-    t.index ["cart_id"], name: "index_line_items_on_cart_id"
-    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.integer "item_id"
+    t.string "item_type"
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.text "address", null: false
     t.string "email", null: false
@@ -98,7 +96,7 @@ ActiveRecord::Schema.define(version: 20171210102155) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "publishers", force: :cascade do |t|
+  create_table "publishers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.string "address", null: false
     t.string "email", default: "", null: false
@@ -107,7 +105,7 @@ ActiveRecord::Schema.define(version: 20171210102155) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "rates", force: :cascade do |t|
+  create_table "rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "rate", default: 0
     t.integer "user_id"
     t.integer "book_id"
@@ -117,7 +115,7 @@ ActiveRecord::Schema.define(version: 20171210102155) do
     t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

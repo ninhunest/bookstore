@@ -86,3 +86,7 @@
 .no_padding_left {
   padding-left: 0px;
 }
+
+.cart_icon {
+  max-height: 25px
+}

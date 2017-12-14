@@ -1,4 +1,6 @@
 source "https://rubygems.org"
+
+gem "acts_as_shopping_cart"
 gem "acts_as_votable"
 gem "bcrypt", "3.1.11"
 gem "bootstrap-sass", "3.3.7"
