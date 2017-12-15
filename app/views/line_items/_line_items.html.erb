@@ -10,12 +10,20 @@
     <% end %>
   </td>
   <td>
-    <input type="number" value="<%= line_item.quantity %>"
-      class="form-control">
+    <input type="number" id="<%= line_item.id %>"
+      value="<%= line_item.quantity %>"
+      class="form-control item-quantity">
   </td>
-  <td><%= format_price line_item.book.price %></td>
-  <td><%= line_item.book.discount %>%</td>
-  <td>$246.00</td>
+  <td id="item-price-<%= line_item.id %>">
+    <%= format_price line_item.book.price %></td>
+  <td id="item-discount-<%= line_item.id %>">
+    <% if line_item.book.discount.present? %>
+      <%= line_item.book.discount %>%
+    <% end %>
+  </td>
+  <td id="item-total-<%= line_item.id %>" class="item-total-price">
+      <%= format_price count_total_price line_item %>
+  </td>
   <td>
     <%= link_to line_item_path(line_item), remote: true,
       method: :delete do %>
