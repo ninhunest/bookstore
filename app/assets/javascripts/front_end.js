@@ -12,3 +12,5 @@
 //= require social-share-button
 //= require bootstrap-fileinput/bootstrap-fileinput
 //= require cable
+//= require accounting/accounting
+//= require cart
