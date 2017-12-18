@@ -1,0 +1,13 @@
+<% if check_item_persent? item %>
+  <%= link_to cart_path(item), remote: true, method: :delete,
+     class: "btn btn-template-main" do %>
+    <i class="fa fa-shopping-cart"></i>
+    <%= t "remove_from_cart" %>
+  <% end %>
+<% else %>
+  <%= link_to carts_path(id: item), remote: true, method: :post,
+    class: "btn btn-template-main" do %>
+    <i class="fa fa-shopping-cart"></i>
+    <%= t "add_to_cart" %>
+  <% end %>
+<% end %>

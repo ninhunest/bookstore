@@ -14,7 +14,9 @@ class BooksController < ApplicationController
   end
 
   def show
-    @comment = @book.comments.build
+    view = @book.view.nil? ? 0 : @book.view
+    @book.view = view + 1
+    @book.save
   end
 
   private

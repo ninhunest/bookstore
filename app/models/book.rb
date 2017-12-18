@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :category
-  belongs_to :publisher
+  belongs_to :publisher, optional: true
   has_many :comments, dependent: :destroy
   has_many :book_authors, dependent: :destroy
   has_many :authors, through: :book_authors
@@ -22,7 +22,7 @@ class Book < ApplicationRecord
 
   scope :select_fields, (lambda do
     select :id, :title, :image_url, :price, :discount, :created_at, :updated_at,
-      :category_id
+      :category_id, :view
   end)
 
   scope :attributes_select, (lambda do

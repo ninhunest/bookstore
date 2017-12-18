@@ -87,7 +87,9 @@
         </div>
         <div class="box-footer">
           <div class="pull-left">
-            <a href="shop-basket.html" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
+            <%= link_to root_path, class: "btn btn-default" do %>
+              <i class="fa fa-chevron-left"></i><%= t "back_to_shop" %>
+            <% end %>
           </div>
           <div class="pull-right">
             <%= f.button :submit, class: "btn btn-template-main" do %>
@@ -96,54 +98,6 @@
           </div>
         </div>
       <% end %>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-3">
-    <div class="box text-uppercase">
-      <h3>You may also like these products</h3>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="product">
-      <div class="image">
-        <a href="shop-detail.html">
-          <img src="img/product2.jpg" alt="" class="img-responsive image1">
-        </a>
-      </div>
-      <div class="text">
-        <h3><a href="shop-detail.html">Fur coat</a></h3>
-        <p class="price">$143</p>
-
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="product">
-      <div class="image">
-        <a href="shop-detail.html">
-          <img src="img/product3.jpg" alt="" class="img-responsive image1">
-        </a>
-      </div>
-      <div class="text">
-        <h3><a href="shop-detail.html">Fur coat</a></h3>
-        <p class="price">$143</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="product">
-      <div class="image">
-        <a href="shop-detail.html">
-          <img src="img/product1.jpg" alt="" class="img-responsive image1">
-        </a>
-      </div>
-      <div class="text">
-        <h3><a href="shop-detail.html">Fur coat</a></h3>
-        <p class="price">$143</p>
-      </div>
     </div>
   </div>
 </div>

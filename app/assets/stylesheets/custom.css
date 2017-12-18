@@ -90,3 +90,7 @@
 .cart_icon {
   max-height: 25px
 }
+
+.viewed {
+  position: absolute;
+}

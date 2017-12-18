@@ -5,7 +5,13 @@ Rails.application.routes.draw do
 
   resources :books
   resources :comments
-  resources :line_items
+  resources :line_items do
+    collection do
+      delete "remove_from_index/:id", to: "line_items#remove_from_index",
+        as: "remove_from_index"
+    end
+  end
+
   resources :carts
   resources :orders
 

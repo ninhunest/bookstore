@@ -1,11 +1,11 @@
 <tr>
   <td>
-    <%= link_to "#" do %>
+    <%= link_to book_path(line_item.book) do %>
       <%= image_tag line_item.book.image_url %>
     <% end %>
   </td>
   <td>
-    <%= link_to "#" do %>
+    <%= link_to book_path(line_item.book) do %>
       <%= line_item.book.title %>
     <% end %>
   </td>

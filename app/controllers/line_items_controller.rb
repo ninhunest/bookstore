@@ -1,12 +1,30 @@
 class LineItemsController < ApplicationController
-  before_action :load_book, only: %i(create destroy)
-  before_action :load_cart, only: %i(create destroy)
+  before_action :load_book, only: %i(create remove_from_index)
+  before_action :load_cart, only: %i(create destroy remove_from_index)
   before_action :load_item, only: :destroy
 
   def create
     @cart.save!
-    @cart.add(@book, @book.price)
+    @cart.add @book, @book.price
     session[:cart_id] = @cart.id
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def remove_from_index
+    @line_item = LineItem.line_items current_cart, @book
+    quantity = @line_item.pluck(:quantity).first
+
+    if @cart.remove @book, quantity
+      respond_to do |format|
+        format.js
+      end
+    else
+      flash[:danger] = t "delete_items_failed"
+      redirect_to @book
+    end
   end
 
   def destroy
@@ -17,8 +35,8 @@ class LineItemsController < ApplicationController
       @line_items = @cart.line_items
 
       respond_to do |format|
-          format.js
-        end
+        format.js
+      end
     else
       flash[:danger] = t "delete_items_failed"
       redirect_to @book
