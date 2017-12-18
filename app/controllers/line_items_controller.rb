@@ -1,7 +1,7 @@
 class LineItemsController < ApplicationController
   before_action :load_book, only: %i(create remove_from_index)
   before_action :load_cart, only: %i(create destroy remove_from_index)
-  before_action :load_item, only: :destroy
+  before_action :load_item, only: %i(destroy update_quantity)
 
   def create
     @cart.save!
@@ -11,6 +11,11 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       format.js
     end
+  end
+
+  def update_quantity
+    @line_item.quantity = params[:quantity]
+    @line_item.save
   end
 
   def remove_from_index
