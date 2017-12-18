@@ -52,7 +52,10 @@ en:
   create_book: "create book"
   failed_create: "failed_create"
   create: "create"
-
+  sure: "sure"
+  deleted: "deleted"
+  delete_failed: "delete_failed"
+  users_management: "Users"
   layouts:
     login:
       register_presentation: "It is easy and done in 1&nbsp;minute and gives you

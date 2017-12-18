@@ -6,6 +6,8 @@ class Book < ApplicationRecord
   has_many :line_items, dependent: :destroy
   has_many :rates, dependent: :destroy
 
+  mount_uploader :image_url, ImageUploader
+
   scope :select_fields, (lambda do
     select :id, :title, :image_url, :price, :discount, :created_at, :updated_at,
       :category_id
