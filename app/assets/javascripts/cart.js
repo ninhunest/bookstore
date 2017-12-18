@@ -21,6 +21,19 @@ $(document).ready(function(){
 
     }
     $('#sub-total').html(to_vnd(sub_total));
+
+    // Ajax update line item quantity
+    $.ajax({
+      type: 'POST',
+      url: '/line_items/update_quantity',
+      beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token',
+        $('meta[name="csrf-token"]').attr('content'))},
+      data: {
+        id: item_id,
+        quantity: quantity
+      },
+      contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+    });
   });
 
   function format_price(price_string, start_slice, end_slice){

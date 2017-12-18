@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     collection do
       delete "remove_from_index/:id", to: "line_items#remove_from_index",
         as: "remove_from_index"
+
+      post "update_quantity", to: "line_items#update_quantity",
+        as: "update_quantity"
     end
   end
 
