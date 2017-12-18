@@ -13,11 +13,11 @@ class BooksController < ApplicationController
     end
   end
 
-  def show
-    view = @book.view.nil? ? 0 : @book.view
-    @book.view = view + 1
-    @book.save
-  end
+  # def show
+  #   view = @book.view.nil? ? 0 : @book.view
+  #   @book.view = view + 1
+  #   @book.save
+  # end
 
   private
 
