@@ -1,38 +1,53 @@
-.small_icon_avatar{
+.small_icon_avatar {
   width: 69px;
   height: 69px;
 }
-.small_price{
+
+.small_price {
   font-size: 20px;
 }
-.image_home{
+
+.image_home {
   height: 200px;
 }
-.image_medium{
+
+.image_medium {
   height: 290px;
 }
-.remember_me{
+
+.remember_me {
   padding-left: 15px;
 }
-.log_in{
+
+.log_in {
   text-align: center
 }
-.no_padding{
+
+.no_padding {
   padding: 0px
 }
-.center_title{
+
+.center_title {
   text-align: center;
 }
-.user_avatar{
+
+.user_avatar {
   height: 150px;
   width: 150px;
 }
-.main_logo{
+
+.main_logo {
   max-height: 42px;
 }
-.no_padding_left{
+
+.no_padding_left {
   padding-left: 0px;
 }
-.cart_icon{
+
+.cart_icon {
   max-height: 25px
+}
+
+.viewed {
+  position: absolute;
 }

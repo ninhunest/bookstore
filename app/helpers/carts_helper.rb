@@ -7,6 +7,10 @@ module CartsHelper
     end
   end
 
+  def check_item_persent? item
+    current_cart.line_items.pluck(:item_id).include? item.id
+  end
+
   def load_items
     line_items = current_cart.line_items
   end

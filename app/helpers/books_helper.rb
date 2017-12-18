@@ -9,6 +9,10 @@ module BooksHelper
     format_price promotion_price
   end
 
+  def count_view book
+    view = book.view.present? ? book.view : 0
+  end
+
   def is_new_book? created_at
     return created_at > Settings.books.previous_week.weeks.ago
   end

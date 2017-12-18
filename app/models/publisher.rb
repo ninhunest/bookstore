@@ -1,5 +1,6 @@
 class Publisher < ApplicationRecord
   has_many :books, dependent: :destroy
+
   scope :select_fields, ->{select :id, :name}
 
   class << self

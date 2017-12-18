@@ -4,6 +4,9 @@
       <%= link_to book_path item do %>
         <%= image_tag item.image_url, class: "img-responsive image1 image_home" %>
       <% end %>
+      <div class="viewed">
+        <i class="fa fa-eye" aria-hidden="true"> <%= count_view item %></i>
+      </div>
     </div>
     <div class="text">
       <h3>
@@ -15,10 +18,10 @@
         <% end %>
         <%= get_promotion_price item.price, item.discount %>
       </p>
-      <%= link_to line_items_path(id: item), method: :post do %>
-        <i class="fa fa-shopping-cart"></i>
-        <%= t "add_to_cart" %>
-      <% end %>
+
+      <div id="home_cart_button-<%= item.id %>">
+        <%= render "home_cart_button", item: item %>
+      </div>
       <p class="buttons">
         <%= link_to "#", clas: "btn btn-template-main" do %>
           <i class="fa fa-shopping-cart"></i>
@@ -26,15 +29,16 @@
         <% end %>
       </p>
     </div>
-    <% if item.discount.present? %>
-      <div class="ribbon sale">
-        <div class="theribbon">-<%= item.discount %>%</div>
-        <div class="ribbon-background"></div>
-      </div>
-    <% end %>
+
     <% if is_new_book? item.created_at %>
       <div class="ribbon new">
         <div class="theribbon"><%= t "new" %></div>
+        <div class="ribbon-background"></div>
+      </div>
+    <% end %>
+    <% if item.discount.present? %>
+      <div class="ribbon sale">
+        <div class="theribbon">-<%= item.discount %>%</div>
         <div class="ribbon-background"></div>
       </div>
     <% end %>

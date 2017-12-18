@@ -3,6 +3,9 @@
     <div id="mainImage">
       <%= image_tag @book.image_url, class: "img-responsive image_medium" %>
     </div>
+    <div class="viewed">
+      <i class="fa fa-eye" aria-hidden="true"> <%= count_view @book %></i>
+    </div>
     <% if @book.discount.present? %>
     <div class="ribbon sale">
       <div class="theribbon">-<%= @book.discount %>%</div>
@@ -27,22 +30,16 @@
         <% end %>
         <%= get_promotion_price @book.price, @book.discount %>
       </p>
-      <p class="text-center">
-        <button type="submit" class="btn btn-template-main">
-          <i class="fa fa-shopping-cart"></i>
-          <%= t "add_to_cart" %>
-        </button>
-        <button class="btn btn-default" data-toggle="tooltip"
-          data-placement="top" title="Add to wishlist">
-          <i class="fa fa-heart-o"></i>
-        </button>
+      <p class="text-center" id="cart_button">
+        <%= render "books/cart_button", item: @book %>
       </p>
     </div>
   </div>
   <div class="project-more col-sm-3">
     <h4><%= t "category" %></h4>
     <% if @book.category.present? %>
-      <%= link_to @book.category.name, "#" %>
+      <%= link_to @book.category.name, books_path("search[category]":
+        @book.category.id) %>
     <% else %>
       <%= t "updating" %>
     <% end %>
@@ -56,7 +53,8 @@
 
     <h4><%= t "publisher" %></h4>
     <% if @book.publisher.present? %>
-      <%= link_to @book.publisher.name, "#" %>
+      <%= link_to @book.publisher.name, books_path("search[publisher]":
+        @book.publisher.id) %>
     <% else %>
       <%= t "updating" %>
     <% end %>
@@ -80,7 +78,7 @@
 <% if user_signed_in? %>
   <div id="comment-form">
     <h4 class="text-uppercase"><%= t "leave_comments" %></h4>
-      <%= form_for @comment, remote: true do |f| %>
+      <%= form_for Comment.new, remote: true do |f| %>
         <div class="row">
           <div class="col-sm-12">
             <div class="form-group">
