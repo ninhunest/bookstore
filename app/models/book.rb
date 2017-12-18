@@ -8,6 +8,11 @@ class Book < ApplicationRecord
   has_many :rates, dependent: :destroy
   mount_uploader :image_url, ImageUploader
 
+  searchable do
+    text :title, :boost => 2
+    text :description
+  end
+
   scope :price_from, ->price {where("price >= ?", price)}
   scope :price_to, ->price {where("price <= ?", price)}
   scope :except_current_book, ->book {where("id != ?", book.id)}
