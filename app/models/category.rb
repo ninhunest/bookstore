@@ -9,4 +9,8 @@ class Category < ApplicationRecord
       Category.select_fields.find category_ids
     end
   end
+
+  scope :category_attributes_select, (lambda do
+    select :id, :name, :created_at, :updated_at
+  end)
 end

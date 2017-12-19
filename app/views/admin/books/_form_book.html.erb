@@ -1,11 +1,11 @@
 <%= form_for [:admin, @book] do |f| %>
   <div class="form-group">
-    <%= f.label :title %><span class="required" aria-required="true"> * </span>
+    <%= f.label :title, class: "notice" %>
     <%= f.text_field :title, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :category %><span class="required" aria-required="true"> * </span>
+    <%= f.label :category, class: "notice" %>
     <%= f.select :category_id,
       @categories.collect {|c| [ c.name, c.id ]},
       {prompt: t("books.chose_category")},
@@ -13,7 +13,7 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :author %><span class="required" aria-required="true"> * </span>
+    <%= f.label :author, class: "notice" %>
     <div class="checkbox">
       <div class="check">
         <%= f.collection_check_boxes(:author_ids, @authors,
@@ -25,7 +25,7 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :publisher %><span class="required" aria-required="true"> * </span>
+    <%= f.label :publisher, class: "notice" %>
     <%= f.select :publisher_id,
       @publishers.collect {|c| [ c.name, c.id ]},
       {prompt: t("books.chose_publisher")},
@@ -33,17 +33,17 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :price %><span class="required" aria-required="true"> * </span>
+    <%= f.label :price, class: "notice" %>
     <%= f.text_field :price, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :discount %><span class="required" aria-required="true"> * </span>
+    <%= f.label :discount, class: "notice" %>
     <%= f.text_field :discount, class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :image %><span class="required" aria-required="true"> * </span>
+    <%= f.label :image, class: "notice" %>
     <%= f.file_field :image_url,
       accept: "image/jpeg,image/gif,image/png" %>
   </div>
