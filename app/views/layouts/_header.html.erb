@@ -16,6 +16,16 @@
                   <%= t "hi" %> <%= current_user.name %>
                 </span>
               <% end %>
+
+              <% if current_user.admin? %>
+                <%= link_to admin_books_path do %>
+                  <i class="fa fa-cog" aria-hidden="true"></i>
+                  <span class="hidden-xs text-uppercase">
+                    <%= t "go_cpanel" %>
+                  </span>
+                <% end %>
+              <% end %>
+
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <%= t "sign_out" %>
               <% end %>

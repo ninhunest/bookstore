@@ -79,6 +79,7 @@ en:
   total: "Total"
   update: "Update"
   edit: "Edit"
+  go_cpanel: "Go CPanel"
 
   layouts:
     login:
