@@ -11,4 +11,8 @@ class User < ApplicationRecord
 
   enum role: [:guest, :admin]
   enum sex: [:male, :female]
+
+  scope :user_attributes_select, (lambda do
+    select :id, :name, :created_at, :updated_at
+  end)
 end

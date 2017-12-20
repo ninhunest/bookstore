@@ -1,0 +1,35 @@
+<div class="portlet light portlet-fit bordered">
+  <div class="portlet-title">
+    <div class="caption">
+      <i class="icon-bubble font-dark"></i>
+      <span class="caption-subject font-dark bold uppercase">
+        <%= t "users_management" %></span>
+    </div>
+    <div class="actions">
+      <div class="btn-group">
+        <%= link_to t("create_new_user"), new_admin_user_path,
+          class: "btn dark btn-outline btn-circle btn-sm" %>
+      </div>
+    </div>
+  </div>
+  <div class="portlet-body">
+    <div class="table-scrollable">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th> # </th>
+            <th> <%= t "avatar" %> </th>
+            <th> <%= t "name" %> </th>
+            <th> <%= t "email" %> </th>
+            <th> <%= t "role" %> </th>
+            <th colspan="2"> <%= t "actions" %> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "user", collection: @users %>
+        </tbody>
+      </table>
+      <%= paginate @users %>
+    </div>
+  </div>
+</div>
