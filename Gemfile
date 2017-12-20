@@ -29,6 +29,7 @@ gem "social-share-button", "~> 0.1.6"
 gem "turbolinks", "5.0.1"
 gem "uglifier", "3.2.0"
 gem "waypoints-rails"
+gem "paranoia"
 
 group :development, :test do
   gem "autoprefixer-rails"

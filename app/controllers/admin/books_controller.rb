@@ -37,7 +37,7 @@ class Admin::BooksController < Admin::AdminController
   end
 
   def destroy
-    if @book.destroy
+    if @book.delete
       flash[:success] = t "deleted"
     else
       flash[:danger] = t "delete_failed"

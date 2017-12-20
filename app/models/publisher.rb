@@ -1,4 +1,5 @@
 class Publisher < ApplicationRecord
+  acts_as_paranoid
   has_many :books, dependent: :destroy
 
   scope :select_fields, ->{select :id, :name}

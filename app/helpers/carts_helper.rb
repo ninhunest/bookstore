@@ -25,7 +25,7 @@ module CartsHelper
 
     items.each do |item|
       quantity = item.quantity
-      book = Book.find_by id: item.item_id
+      book = Book.with_deleted.find_by id: item.item_id
 
       if book.discount.present?
         price = book.price - book.discount.to_f/Settings.percentage * book.price

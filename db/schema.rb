@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171215080621) do
+ActiveRecord::Schema.define(version: 20171220090042) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.string "name", null: false
@@ -37,8 +37,10 @@ ActiveRecord::Schema.define(version: 20171215080621) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["category_id"], name: "index_books_on_category_id"
+    t.index ["deleted_at"], name: "index_books_on_deleted_at"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"
   end
 
@@ -105,6 +107,8 @@ ActiveRecord::Schema.define(version: 20171215080621) do
     t.integer "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_publishers_on_deleted_at"
   end
 
   create_table "rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|

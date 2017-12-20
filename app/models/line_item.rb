@@ -1,5 +1,5 @@
 class LineItem < ApplicationRecord
-  belongs_to :book, foreign_key: :item_id
+  belongs_to :book, -> { with_deleted }, foreign_key: :item_id
   acts_as_shopping_cart_item_for :cart
 
   scope :line_items, (lambda do |cart, book|

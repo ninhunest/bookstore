@@ -4,7 +4,6 @@ class LineItemsController < ApplicationController
   before_action :load_item, only: %i(destroy update_quantity)
 
   def create
-    # @cart.save!
     @cart.add @book, @book.price
     session[:cart_id] = @cart.id
 

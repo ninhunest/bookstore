@@ -1,10 +1,11 @@
 class Book < ApplicationRecord
+  acts_as_paranoid
   belongs_to :category
   belongs_to :publisher, optional: true
   has_many :comments, dependent: :destroy
   has_many :book_authors, dependent: :destroy
   has_many :authors, through: :book_authors
-  has_many :line_items, dependent: :destroy
+  has_many :line_items
   has_many :rates, dependent: :destroy
 
   mount_uploader :image_url, ImageUploader
