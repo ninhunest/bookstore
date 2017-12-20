@@ -11,6 +11,6 @@ class Publisher < ApplicationRecord
   end
 
   scope :attributes_select_publisher, (lambda do
-    select :id, :name
+    select :id, :name, :address, :email, :phone, :created_at
   end)
 end
