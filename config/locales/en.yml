@@ -81,7 +81,7 @@ en:
   edit: "Edit"
   go_cpanel: "Go CPanel"
   create_author: "created author"
-
+  save: "save"
   layouts:
     login:
       register_presentation: "It is easy and done in 1&nbsp;minute and gives

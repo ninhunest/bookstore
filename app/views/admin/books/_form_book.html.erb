@@ -42,10 +42,26 @@
     <%= f.text_field :discount, class: "form-control" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :image, class: "notice" %>
-    <%= f.file_field :image_url,
-      accept: "image/jpeg,image/gif,image/png" %>
+  <div class="fileinput fileinput-new" data-provides="fileinput">
+    <div class="fileinput-new thumbnail avatar_preview">
+      <%= image_tag "ava.png" %>
+    </div>
+    <div class="fileinput-preview fileinput-exists thumbnail ava_exist">
+    </div>
+    <div>
+      <span class="btn default btn-file">
+        <span class="fileinput-new">
+          <%=  t "select_image" %>
+        </span>
+        <span class="fileinput-exists">
+          <%= t "change" %>
+        </span>
+        <%= f.file_field :image_url %>
+      </span>
+      <%= link_to t("remove"), "javascript:;",
+        data: {"dismiss": "fileinput"},
+        class: "btn default fileinput-exists" %>
+    </div>
   </div>
 
   <div class="form-group">
@@ -54,6 +70,6 @@
   </div>
 
   <div class="form-group">
-    <%= f.submit t("create"), class: "btn btn-primary" %>
+    <%= f.submit t("save"), class: "btn btn-primary" %>
   </div>
 <% end %>
