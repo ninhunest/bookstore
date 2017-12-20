@@ -5,19 +5,15 @@ class BooksController < ApplicationController
   before_action :load_meta_data_for_current_book, only: :show
 
   def index
-    if params[:search].present? && params[:search][:title].present?
-      full_text_search
-    else
-      @books = @books.select_fields.order_by_created_at
-        .page(params[:page]).per Settings.books.per_page
-    end
+    @books = @books.select_fields.order_by_created_at
+      .page(params[:page]).per Settings.books.per_page
   end
 
-  # def show
-  #   view = @book.view.nil? ? 0 : @book.view
-  #   @book.view = view + 1
-  #   @book.save
-  # end
+  def show
+    view = @book.view.nil? ? 0 : @book.view
+    @book.view = view + 1
+    @book.save
+  end
 
   private
 
@@ -37,6 +33,10 @@ class BooksController < ApplicationController
         filter_by_publisher
       end
 
+      if params[:search][:title].present?
+        @books = @books.find_by_title params[:search][:title]
+      end
+
       if params[:search][:price_from].present?
         @books = @books.price_from params[:search][:price_from]
       end
@@ -45,14 +45,6 @@ class BooksController < ApplicationController
         @books = @books.price_to params[:search][:price_to]
       end
     end
-  end
-
-  def full_text_search
-    @query = Book.search do
-      fulltext params[:search][:title]
-    end
-
-    @books = @query.results
   end
 
   def filter_by_category
