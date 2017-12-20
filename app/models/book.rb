@@ -1,6 +1,5 @@
 class Book < ApplicationRecord
   acts_as_paranoid
-
   belongs_to :category
   belongs_to :publisher, optional: true
   has_many :comments, dependent: :destroy
