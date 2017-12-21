@@ -1,5 +1,6 @@
 # Use this hook to configure ckeditor
 Ckeditor.setup do |config|
+  config.assets = ["ckeditor/ckeditor.js"]
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default), :mongo_mapper and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be

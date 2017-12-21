@@ -76,13 +76,22 @@
             <li class="nav-item  ">
               <%= link_to t("authors"), admin_authors_path, class: "nav-link" %>
             </li>
+            <li class="nav-item  ">
+              <%= link_to t("orders"), admin_orders_path, class: "nav-link" %>
+            </li>
           </ul>
         </div>
       </div>
       <div class="page-content-wrapper">
         <div class="page-content">
           <% flash.each do |key, value| %>
-            <div class="alert alert-<%= key %>"><%= value %></div>
+            <div class="alert alert-<%= key %>">
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+                <span class="sr-only"><%= t "close" %></span>
+              </button>
+              <%= value %>
+            </div>
           <% end %>
           <%= yield %>
         </div>

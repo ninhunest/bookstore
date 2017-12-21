@@ -11,14 +11,13 @@
         <thead>
           <tr>
             <th> # </th>
-            <th> <%= t "avatar" %> </th>
             <th> <%= t "name" %> </th>
             <th> <%= t "email" %> </th>
             <th> <%= t "role" %> </th>
             <th colspan="2"> <%= t "actions" %> </th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="tbluser">
           <%= render partial: "user", collection: @users %>
         </tbody>
       </table>

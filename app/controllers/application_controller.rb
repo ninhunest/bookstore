@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   include CategoriesHelper
   include PublishersHelper
   include LineItemsHelper
-
   before_action :configure_permitted_parameters, if: :devise_controller?
   helper_method :current_order
 

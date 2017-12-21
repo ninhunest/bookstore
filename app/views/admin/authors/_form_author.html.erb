@@ -1,6 +1,6 @@
 <%= form_for [:admin, @author] do |f| %>
   <div class="form-group">
-    <%= f.label :name %><span class="required" aria-required="true"> * </span>
+    <%= f.label :name, class: "notice"%>
     <%= f.text_field :name, class: "form-control" %>
   </div>
 

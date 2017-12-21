@@ -1,0 +1,6 @@
+<tr>
+  <td id="image-order"><%= image_tag line_item.book.image_url %></td>
+  <td><%= line_item.book.title %></td>
+  <td><%= line_item.quantity %></td>
+  <td><%= format_price count_total_price_order line_item %></td>
+</tr>

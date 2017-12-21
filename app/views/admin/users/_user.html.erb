@@ -1,6 +1,5 @@
-<tr>
+<tr id="<%= user.id %>">
   <td> <%= user_counter + 1 %> </td>
-  <td> <%= user.avatar %> </td>
   <td> <%= user.name %> </td>
   <td> <%= user.email %> </td>
   <td> <%= user.role %> </td>
@@ -14,7 +13,7 @@
   </td>
   <td align="center">
     <%= link_to t("destroy"), admin_user_path(user.id),
-      method: :delete, data: {confirm: t("sure")},
+      method: :delete,remote: true, data: {confirm: t("sure")},
       class: "btn btn-sm grey-salsa btn-outline" %>
   </td>
 </tr>

@@ -4,8 +4,6 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :rates, dependent: :destroy
 
-  mount_uploader :avatar, AvatarUploader
-
   has_attached_file :avatar, styles: {medium: Settings.user_avatar.medium,
     thumb: Settings.user_avatar.thumb},
     default_url: Settings.user_avatar.missing_url

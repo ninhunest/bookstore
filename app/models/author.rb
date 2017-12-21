@@ -3,6 +3,9 @@ class Author < ApplicationRecord
   has_many :books, through: :book_authors
   scope :select_fields, ->{select :id, :name}
 
+  validates :name, presence: true,
+    length: {maximum: Settings.max_length_name_author}
+
   class << self
     def hot_authors
       author_ids = Author.joins(:book_authors)

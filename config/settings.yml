@@ -26,3 +26,7 @@ comments:
   limit: 3
   per_page: 3
 sub_total: 0
+max_length_name_author: 50
+max_length_title_book: 50
+max_length_name_category: 50
+max_length_name_publisher: 30

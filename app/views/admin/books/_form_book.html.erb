@@ -1,4 +1,4 @@
-<%= form_for [:admin, @book] do |f| %>
+<%= form_for [:admin, @book], html: {multipart: true} do |f| %>
   <div class="form-group">
     <%= f.label :title, class: "notice" %>
     <%= f.text_field :title, class: "form-control" %>
@@ -9,27 +9,21 @@
     <%= f.select :category_id,
       @categories.collect {|c| [ c.name, c.id ]},
       {prompt: t("books.chose_category")},
-      class: "form-control" %>
+      class: "bs-select form-control", "data-live-search" => "true" %>
   </div>
 
-  <div class="form-group">
+  <div>
     <%= f.label :author, class: "notice" %>
-    <div class="checkbox">
-      <div class="check">
-        <%= f.collection_check_boxes(:author_ids, @authors,
-          :id, :name) do |b| %>
-        <%= b.label {b.check_box + b.text} %><br>
-        <% end %>
-      </div>
-    </div>
+    <%= f.select :author_ids,options_for_select(@authors.collect {|c| [ c.name, c.id ]}),{prompt: "nothing selected"}, {:multiple => true, class: "bs-select form-control", "data-live-search" => "true"} %>
   </div>
+  <br>
 
   <div class="form-group">
     <%= f.label :publisher, class: "notice" %>
     <%= f.select :publisher_id,
       @publishers.collect {|c| [ c.name, c.id ]},
       {prompt: t("books.chose_publisher")},
-      class: "form-control" %>
+      class: "bs-select form-control", "data-live-search" => "true" %>
   </div>
 
   <div class="form-group">

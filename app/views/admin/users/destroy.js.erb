@@ -1,0 +1,2 @@
+$('#<%= @user.id %>').remove();
+$('#tbluser').html('<%= j render partial: "user", collection: @users %>');

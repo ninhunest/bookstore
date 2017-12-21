@@ -3,6 +3,8 @@ class Category < ApplicationRecord
   has_many :books, dependent: :destroy
   scope :select_fields, ->{select :id, :name}
 
+  validates :name, presence: true,
+    length: {maximum: Settings.max_length_name_category}
   class << self
     def hot_categories
       category_ids = Category.joins(:books).order("count_books_id DESC")

@@ -3,7 +3,7 @@
   <td><%= publisher.name %></td>
   <td><%= publisher.address %></td>
   <td><%= publisher.email %></td>
-  <td><%= publisher.phone %></td>
+  <td><%= number_to_phone publisher.phone %></td>
   <td><%= publisher.created_at.strftime Settings.format_time %></td>
   <td>
     <%= link_to t("view"), admin_publisher_path(publisher.id),

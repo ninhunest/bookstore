@@ -10,6 +10,10 @@ class Book < ApplicationRecord
 
   mount_uploader :image_url, ImageUploader
 
+  validates :title, presence: true,
+    length: {maximum: Settings.max_length_title_book}
+  validates :price, presence: true
+
   scope :price_from, ->price {where("price >= ?", price)}
   scope :price_to, ->price {where("price <= ?", price)}
   scope :except_current_book, ->book {where("id != ?", book.id)}

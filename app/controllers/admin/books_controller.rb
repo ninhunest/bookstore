@@ -38,12 +38,19 @@ class Admin::BooksController < Admin::AdminController
 
   def destroy
     if @book.delete
-      flash[:success] = t "deleted"
+      @books = Book.attributes_select.order_by_created_at
+        .page(params[:page]).per Settings.per_page
+      respond_to do |format|
+        format.html do
+          flash[:success] = t "delete_success"
+          redirect_to request.referrer
+        end
+        format.js
+      end
     else
-      flash[:danger] = t "delete_failed"
+      flash[:danger] = t "failed_delete"
+      redirect_to request.referrer
     end
-
-    redirect_to request.referrer
   end
 
   private
