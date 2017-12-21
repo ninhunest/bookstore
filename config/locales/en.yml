@@ -58,6 +58,9 @@ en:
   users_management: "Users"
   create_category: "create category"
   create_publisher: "create publisher"
+  delete_comment: "Delete comment"
+  comment_not_found: "Comment not found"
+
   layouts:
     login:
       register_presentation: "It is easy and done in 1&nbsp;minute and gives you
