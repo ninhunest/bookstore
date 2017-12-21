@@ -19,9 +19,10 @@
       </div>
     <% end -%>
     <div class="actions col-md-7 log_in">
-      <%= f.submit t("sign_in") %>
+      <%= f.submit t("sign_in"), class: "btn btn-info" %>
     </div>
   <% end %>
   <br><br>
   <%= render "users/shared/links" %>
+  <br>
 </div>

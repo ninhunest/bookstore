@@ -71,9 +71,9 @@
   <div class="comment-tabs">
     <ul class="media-list" id="comments">
       <%= render partial: "comments", collection: @comments, as: :comment %>
-  </ul>
-</div>
-
+    </ul>
+    <%= paginate @comments %>
+  </div>
 </div>
 <% if user_signed_in? %>
   <div id="comment-form">

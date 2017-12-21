@@ -1,2 +1,3 @@
 $('#shopping_cart_item').html("<%= j render partial: 'line_items/line_items',
   collection: @line_items, as: :line_item %>");
+$('#cart_header').html("<%= j render 'layouts/cart_header' %>");

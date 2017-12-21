@@ -98,3 +98,7 @@
 .book-item {
   min-height: 420px;
 }
+
+#footer {
+  padding: 10px 0 !important;
+}

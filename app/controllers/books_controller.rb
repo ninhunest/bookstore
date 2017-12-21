@@ -80,7 +80,7 @@ class BooksController < ApplicationController
 
   def load_meta_data_for_current_book
     @comments = Comment.load_comment(@book).except_reply.select_fields
-      .order_by_created_at.limit Settings.comments.limit
+      .order_by_created_at.page(params[:page]).per Settings.comments.per_page
     @authors = @book.authors
     if @book.category.present?
       @related_books = @book.category.books.except_current_book(@book)

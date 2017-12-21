@@ -1,2 +1,3 @@
 $('#home_cart_button-<%= @book.id %>').html("<%= j render partial:
   'books/home_cart_button', locals: {item: @book} %>");
+$('#cart_header').html("<%= j render 'layouts/cart_header' %>");

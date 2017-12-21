@@ -72,12 +72,8 @@
         </div>
         <div class="navbar-collapse collapse" id="navigation">
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <%= link_to carts_path do %>
-                <%= image_tag "cart_icon.png", class: "cart_icon" %>
-                <%= total_items %> <%= t "products" %>,
-                <%= format_price total_price %>
-              <% end %>
+            <li class="dropdown" id="cart_header">
+              <%= render "layouts/cart_header" %>
             </li>
           </ul>
         </div>

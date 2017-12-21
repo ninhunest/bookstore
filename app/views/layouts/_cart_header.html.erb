@@ -1,0 +1,5 @@
+<%= link_to carts_path do %>
+  <%= image_tag "cart_icon.png", class: "cart_icon" %>
+  <%= total_items %> <%= t "products" %>,
+  <%= format_price total_price %>
+<% end %>
